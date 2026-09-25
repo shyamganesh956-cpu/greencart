@@ -7,20 +7,9 @@ import {
   Menu, 
   Truck,
   Heart,
-  Bell,
-  MapPin,
-  Bot,
-  Coins,
-  ChevronDown,
-  CheckCircle2
+  Bell
 } from 'lucide-react';
 import Logo from './Logo';
-
-const DEFAULT_ADDRESSES = [
-  { id: 'addr-home', type: 'Home', icon: '🏠', label: 'Home - Gandhipuram, Coimbatore' },
-  { id: 'addr-college', type: 'College', icon: '🎓', label: 'College - PSG Tech Campus, Peelamedu' },
-  { id: 'addr-work', type: 'Work', icon: '🏢', label: 'Work - Tidel Park, Avinashi Rd' }
-];
 
 const INITIAL_NOTIFICATIONS = [
   {
@@ -67,11 +56,6 @@ export default function Navbar({
   onNavigate
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  // Multiple delivery address state
-  const [addresses] = useState(DEFAULT_ADDRESSES);
-  const [selectedAddress, setSelectedAddress] = useState(DEFAULT_ADDRESSES[0]);
-  const [isAddressDropdownOpen, setIsAddressDropdownOpen] = useState(false);
 
   // Notification center state
   const [notifications, setNotifications] = useState(INITIAL_NOTIFICATIONS);
@@ -83,11 +67,6 @@ export default function Navbar({
     setNotifications(prev => prev.map(n => ({ ...n, unread: false })));
   };
 
-  const handleSelectAddress = (addr) => {
-    setSelectedAddress(addr);
-    setIsAddressDropdownOpen(false);
-  };
-
   const handleNavClick = (sectionId) => {
     onNavigate(sectionId);
     setMobileMenuOpen(false);
@@ -95,85 +74,6 @@ export default function Navbar({
 
   return (
     <header className="site-header">
-      {/* Top microbar for addresses, assistant shortcuts & notifications */}
-      <div className="top-micro-bar">
-        <div className="container micro-bar-container">
-          {/* Multiple Address Dropdown */}
-          <div className="address-dropdown-wrapper">
-            <button 
-              type="button" 
-              className="address-selector-btn"
-              onClick={() => setIsAddressDropdownOpen(!isAddressDropdownOpen)}
-              title="Change Delivery Location"
-            >
-              <MapPin size={14} className="pin-icon" />
-              <span className="address-type-tag">{selectedAddress.type}:</span>
-              <span className="address-text-truncated">{selectedAddress.label}</span>
-              <ChevronDown size={13} className="address-chevron" />
-            </button>
-
-            {isAddressDropdownOpen && (
-              <div className="address-dropdown-menu">
-                <div className="address-dropdown-header">
-                  <strong>Deliver to:</strong>
-                </div>
-                {addresses.map(addr => (
-                  <button
-                    key={addr.id}
-                    type="button"
-                    className={`address-option-btn ${selectedAddress.id === addr.id ? 'active' : ''}`}
-                    onClick={() => handleSelectAddress(addr)}
-                  >
-                    <span className="addr-emoji">{addr.icon}</span>
-                    <div className="addr-text-col">
-                      <span className="addr-name">{addr.type}</span>
-                      <span className="addr-detail">{addr.label}</span>
-                    </div>
-                    {selectedAddress.id === addr.id && (
-                      <CheckCircle2 size={16} className="active-check-icon" />
-                    )}
-                  </button>
-                ))}
-                <button 
-                  type="button" 
-                  className="add-new-address-link"
-                  onClick={() => {
-                    setIsAddressDropdownOpen(false);
-                    if (onOpenLocationModal) onOpenLocationModal();
-                  }}
-                >
-                  + Add New Delivery Location
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* Quick Smart Actions */}
-          <div className="micro-bar-right">
-            <button 
-              type="button" 
-              className="micro-smart-btn assistant-shortcut"
-              onClick={onOpenAssistant}
-              title="Open Smart Grocery Assistant"
-            >
-              <Bot size={14} />
-              <span>Smart Assistant</span>
-              <span className="micro-badge-pulse">AI</span>
-            </button>
-
-            <button 
-              type="button" 
-              className="micro-smart-btn budget-shortcut"
-              onClick={onOpenBudget}
-              title="Shop by Budget"
-            >
-              <Coins size={14} />
-              <span>Budget Shopping</span>
-              <span className="micro-badge-value">₹500</span>
-            </button>
-          </div>
-        </div>
-      </div>
 
       {/* Main Navbar */}
       <nav className="main-navbar">

@@ -4,7 +4,9 @@ import {
   Phone, 
   MapPin, 
   ShieldCheck, 
-  Heart
+  Heart,
+  Clock,
+  Truck
 } from 'lucide-react';
 import Logo from './Logo';
 
@@ -13,79 +15,16 @@ export default function Footer({ onCategoryClick, onOpenTracker }) {
     <footer className="site-footer">
       <div className="container">
 
-        {/* Main Footer Links Columns - Reordered with GreenCart Logo & Contact at the Far Right */}
-        <div className="footer-columns-grid reordered-footer">
-          {/* Column 1: Fresh Categories */}
-          <div className="footer-col">
-            <h4>Fresh Categories</h4>
-            <ul className="footer-links-list">
-              <li><button type="button" onClick={() => onCategoryClick('Vegetables')}>Fresh Vegetables</button></li>
-              <li><button type="button" onClick={() => onCategoryClick('Fruits')}>Handpicked Fruits</button></li>
-              <li><button type="button" onClick={() => onCategoryClick('Dairy & Eggs')}>Dairy &amp; Farm Eggs</button></li>
-              <li><button type="button" onClick={() => onCategoryClick('Meat & Seafood')}>Meat &amp; Seafood</button></li>
-              <li><button type="button" onClick={() => onCategoryClick('Grocery & Staples')}>Grocery &amp; Staples</button></li>
-              <li><button type="button" onClick={() => onCategoryClick('Snacks')}>Healthy Munchies</button></li>
-              <li><button type="button" onClick={() => onCategoryClick('Beverages')}>Cold-Pressed Beverages</button></li>
-              <li><button type="button" onClick={() => onCategoryClick('Bakery & Breakfast')}>Bakery &amp; Breakfast</button></li>
-              <li><button type="button" onClick={() => onCategoryClick('Personal Care')}>Personal Care</button></li>
-            </ul>
-          </div>
-
-          {/* Column 2: About GreenCart */}
-          <div className="footer-col">
-            <h4>About GreenCart</h4>
-            <ul className="footer-links-list">
-              <li><a href="#about">About Our Vision</a></li>
-              <li><a href="#farmers">Our Partner Farmers</a></li>
-              <li><a href="#sustainability">Zero Waste Cold-Chain</a></li>
-              <li><a href="#careers">Careers <span className="hiring-badge">Hiring</span></a></li>
-              <li><a href="#press">Press &amp; Media</a></li>
-              <li><a href="#impact">Farmer Welfare Program</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Customer Care */}
-          <div className="footer-col">
-            <h4>Customer Care</h4>
-            <ul className="footer-links-list">
-              <li><a href="#faq">Help &amp; Support FAQs</a></li>
-              <li><a href="#shipping">30-Min Delivery Policy</a></li>
-              <li><a href="#returns">Instant Returns &amp; Refund</a></li>
-              <li><a href="#terms">Terms of Service</a></li>
-              <li><a href="#privacy">Privacy &amp; Cookie Policy</a></li>
-              <li>
-                <button 
-                  type="button" 
-                  onClick={onOpenTracker}
-                  className="footer-track-btn"
-                >
-                  Live Order Tracking
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: GreenCart Logo, Description, Location, Mail, and Social links on the FAR RIGHT */}
-          <div className="footer-col brand-col brand-col-right">
+        {/* 4 Columns: Logo/About (Left) -> Categories -> Company -> Contact/Location (Right) */}
+        <div className="footer-columns-grid">
+          
+          {/* Column 1: Logo & Brand Details on the LEFT (Before Fresh Categories) */}
+          <div className="footer-col brand-col brand-col-left">
             <Logo height={44} />
             <p className="brand-description">
               GreenCart connects conscious households directly with certified local organic farms.
-              Harvested at sunrise, triple-inspected for pristine freshness, and delivered in 30 minutes.
+              Harvested at sunrise, cold-chain packed, and delivered in 30 minutes.
             </p>
-            <div className="footer-contact-info">
-              <div className="contact-item">
-                <MapPin size={16} className="contact-icon" />
-                <span>Gandhipuram, Coimbatore, Tamil Nadu 628001</span>
-              </div>
-              <div className="contact-item">
-                <Phone size={16} className="contact-icon" />
-                <span>1800-473-3622 (1800-GREEN-CART)</span>
-              </div>
-              <div className="contact-item">
-                <Mail size={16} className="contact-icon" />
-                <span>support@greencart.in</span>
-              </div>
-            </div>
 
             {/* Social Media Links */}
             <div className="social-links-row">
@@ -115,6 +54,71 @@ export default function Footer({ onCategoryClick, onOpenTracker }) {
               </a>
             </div>
           </div>
+
+          {/* Column 2: Fresh Categories */}
+          <div className="footer-col">
+            <h4>Fresh Categories</h4>
+            <ul className="footer-links-list">
+              <li><button type="button" onClick={() => onCategoryClick('Vegetables')}>Fresh Vegetables</button></li>
+              <li><button type="button" onClick={() => onCategoryClick('Fruits')}>Handpicked Fruits</button></li>
+              <li><button type="button" onClick={() => onCategoryClick('Dairy & Eggs')}>Dairy &amp; Farm Eggs</button></li>
+              <li><button type="button" onClick={() => onCategoryClick('Snacks')}>Indian Snacks &amp; Munchies</button></li>
+              <li><button type="button" onClick={() => onCategoryClick('Beverages')}>Desi Juices &amp; Drinks</button></li>
+              <li><button type="button" onClick={() => onCategoryClick('Meat & Seafood')}>Meat &amp; Seafood</button></li>
+              <li><button type="button" onClick={() => onCategoryClick('Grocery & Staples')}>Grocery &amp; Staples</button></li>
+              <li><button type="button" onClick={() => onCategoryClick('Bakery & Breakfast')}>Bakery &amp; Breakfast</button></li>
+            </ul>
+          </div>
+
+          {/* Column 3: About GreenCart */}
+          <div className="footer-col">
+            <h4>About GreenCart</h4>
+            <ul className="footer-links-list">
+              <li><a href="#about">About Our Vision</a></li>
+              <li><a href="#farmers">Our Partner Farmers</a></li>
+              <li><a href="#sustainability">Zero Waste Cold-Chain</a></li>
+              <li><a href="#careers">Careers <span className="hiring-badge">Hiring</span></a></li>
+              <li><a href="#press">Press &amp; Media</a></li>
+              <li><a href="#impact">Farmer Welfare Program</a></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Location, Contact & Customer Care on the RIGHT */}
+          <div className="footer-col contact-col-right">
+            <h4>Contact &amp; Location</h4>
+            
+            <div className="footer-contact-info">
+              <div className="contact-item">
+                <MapPin size={16} className="contact-icon" />
+                <span>Gandhipuram, Coimbatore, Tamil Nadu 628001</span>
+              </div>
+              <div className="contact-item">
+                <Phone size={16} className="contact-icon" />
+                <span>1800-473-3622 (Toll Free)</span>
+              </div>
+              <div className="contact-item">
+                <Mail size={16} className="contact-icon" />
+                <span>support@greencart.in</span>
+              </div>
+              <div className="contact-item">
+                <Clock size={16} className="contact-icon" />
+                <span>Delivery Hours: 6:00 AM – 11:30 PM</span>
+              </div>
+            </div>
+
+            <div className="footer-action-wrap">
+              <button 
+                type="button" 
+                onClick={onOpenTracker}
+                className="footer-track-btn"
+                title="Track your live grocery order"
+              >
+                <Truck size={15} />
+                <span>Live Order Tracking</span>
+              </button>
+            </div>
+          </div>
+
         </div>
 
         {/* Bottom Bar */}

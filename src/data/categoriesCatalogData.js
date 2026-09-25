@@ -202,70 +202,58 @@ export const MAIN_CATEGORIES_15 = [
   {
     id: 'cat-6-snacks',
     number: 6,
-    name: 'Snacks',
+    name: 'Snacks & Munchies',
     slug: 'snacks',
-    itemCount: '18+ Items',
-    tagline: 'Crunchy chips, premium cookies, roasted nuts, and sweets',
+    itemCount: '20+ Items',
+    tagline: 'Desi namkeen, Haldiram bhujia, Lay\'s chips, and Indian teatime biscuits',
     image: snackImg,
     subcategories: [
       {
-        name: 'Chips',
-        items: ['Potato Chips', 'Banana Chips', 'Nachos']
+        name: 'Indian Namkeen & Bhujia',
+        items: ["Haldiram's Aloo Bhujia", "Haldiram's Khatta Meetha", "Haldiram's Bhujia Sev", "Murukku Traditional"]
       },
       {
-        name: 'Biscuits',
-        items: ['Cream Biscuits', 'Glucose Biscuits', 'Cookies']
+        name: 'Chips & Crisps',
+        items: ["Lay's India's Magic Masala", "Kurkure Masala Munch", "Bingo Mad Angles Achari", "Kerala Banana Chips"]
       },
       {
-        name: 'Healthy Snacks',
-        items: ['Nuts', 'Dry Fruits', 'Granola Bars']
+        name: 'Chai Time Biscuits',
+        items: ["Parle-G Gold Biscuits", "Britannia Good Day Butter", "Sunfeast Dark Fantasy", "Oreo Double Stuf"]
       },
       {
-        name: 'Namkeen Snacks',
-        items: ['Mixture', 'Sev', 'Bhujia']
+        name: 'Indian Sweets & Mithai',
+        items: ["Bikaji Gulab Jamun", "Haldiram's Rasgulla", "Cadbury Dairy Milk Silk", "Ferrero Rocher Moments"]
       },
       {
-        name: 'Chocolates & Candies',
-        items: ['Chocolates', 'Candy', 'Toffee']
-      },
-      {
-        name: 'Popcorn',
-        items: ['Salted Popcorn', 'Caramel Popcorn']
+        name: 'Healthy Nuts & Dry Fruits',
+        items: ["California Roasted Almonds", "Premium W320 Cashews", "Afghan Green Raisins"]
       }
     ]
   },
   {
     id: 'cat-7-beverages',
     number: 7,
-    name: 'Beverages',
+    name: 'Cold Drinks & Juices',
     slug: 'beverages',
-    itemCount: '17+ Items',
-    tagline: 'Refreshing cold-pressed juices, aromatic teas, coffee, and energy drinks',
+    itemCount: '16+ Items',
+    tagline: 'Desi mango drinks, Paper Boat juices, Thums Up, and fresh coconut water',
     image: bevImg,
     subcategories: [
       {
-        name: 'Tea',
-        items: ['Tea Powder', 'Green Tea']
+        name: 'Indian Juices & Mango Drinks',
+        items: ["Frooti Mango Drink", "Real Fruit Power Mixed Fruit", "Paper Boat Aamras Mango", "Paper Boat Chilli Guava", "Tender Coconut Water"]
       },
       {
-        name: 'Coffee',
-        items: ['Instant Coffee', 'Filter Coffee']
+        name: 'Cold Drinks & Masala Sodas',
+        items: ["Thums Up Charged", "Sprite Chilled Lime", "Amul Kool Kesar Badam", "Paper Boat Jeera Masala Soda"]
       },
       {
-        name: 'Juices',
-        items: ['Orange Juice', 'Apple Juice', 'Mixed Fruit Juice']
+        name: 'Chai & South Indian Coffee',
+        items: ["Tata Tea Gold Blend", "Brooke Bond Red Label", "Bru Instant Coffee", "Narasu's South Indian Filter Coffee"]
       },
       {
-        name: 'Soft Drinks',
-        items: ['Cola', 'Lemon Drink']
-      },
-      {
-        name: 'Energy & Sports Drinks',
-        items: ['Energy Drinks', 'Electrolyte Drinks']
-      },
-      {
-        name: 'Water',
-        items: ['Packaged Water', 'Sparkling Water']
+        name: 'Daily Dairy & Mineral Water',
+        items: ["Yakult Probiotic Drink", "Bisleri Mineral Water 5L", "Amul Taaza Flavoured Milk"]
       }
     ]
   },
@@ -574,37 +562,44 @@ const ITEM_IMAGES = {
   'Rock Salt': 'https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&w=400&q=80',
   'Iodized Salt': 'https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&w=400&q=80',
 
-  // Snacks
-  'Potato Chips': 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
-  'Banana Chips': 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
-  'Nachos': 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=400&q=80',
-  'Cream Biscuits': 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80',
-  'Glucose Biscuits': 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80',
-  'Cookies': 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80',
-  'Nuts': 'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80',
-  'Dry Fruits': 'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80',
-  'Granola Bars': 'https://images.unsplash.com/photo-1622484214647-7589ebef6c3b?auto=format&fit=crop&w=400&q=80',
-  'Mixture': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
-  'Sev': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
-  'Bhujia': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
-  'Chocolates': 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
-  'Candy': 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=400&q=80',
-  'Toffee': 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=400&q=80',
-  'Salted Popcorn': 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=400&q=80',
-  'Caramel Popcorn': 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=400&q=80',
+  // Indian Snacks & Munchies
+  "Haldiram's Aloo Bhujia": 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
+  "Haldiram's Khatta Meetha": 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
+  "Haldiram's Bhujia Sev": 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
+  "Murukku Traditional": 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
+  "Lay's India's Magic Masala": 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
+  "Kurkure Masala Munch": 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
+  "Bingo Mad Angles Achari": 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=400&q=80',
+  "Kerala Banana Chips": 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
+  "Parle-G Gold Biscuits": 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80',
+  "Britannia Good Day Butter": 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80',
+  "Sunfeast Dark Fantasy": 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80',
+  "Oreo Double Stuf": 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80',
+  "Bikaji Gulab Jamun": 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
+  "Haldiram's Rasgulla": 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
+  "Cadbury Dairy Milk Silk": 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
+  "Ferrero Rocher Moments": 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
+  "California Roasted Almonds": 'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80',
+  "Premium W320 Cashews": 'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80',
+  "Afghan Green Raisins": 'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80',
 
-  // Beverages
-  'Tea Powder': 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80',
-  'Green Tea': 'https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&w=400&q=80',
-  'Instant Coffee': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80',
-  'Filter Coffee': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80',
-  'Orange Juice': 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=400&q=80',
-  'Apple Juice': 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=400&q=80',
-  'Mixed Fruit Juice': 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=400&q=80',
-  'Cola': 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80',
-  'Lemon Drink': 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80',
-  'Energy Drinks': 'https://images.unsplash.com/photo-1622543925917-763c34d1a86e?auto=format&fit=crop&w=400&q=80',
-  'Electrolyte Drinks': coconutWaterImg,
+  // Indian Beverages & Cold Drinks
+  "Frooti Mango Drink": 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=400&q=80',
+  "Real Fruit Power Mixed Fruit": 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=400&q=80',
+  "Paper Boat Aamras Mango": 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=400&q=80',
+  "Paper Boat Chilli Guava": 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=400&q=80',
+  "Tender Coconut Water": coconutWaterImg,
+  "Thums Up Charged": 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80',
+  "Sprite Chilled Lime": 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80',
+  "Amul Kool Kesar Badam": 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=400&q=80',
+  "Paper Boat Jeera Masala Soda": 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80',
+  "Tata Tea Gold Blend": 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80',
+  "Brooke Bond Red Label": 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80',
+  "Bru Instant Coffee": 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80',
+  "Narasu's South Indian Filter Coffee": 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80',
+  "Yakult Probiotic Drink": 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=400&q=80',
+  "Bisleri Mineral Water 5L": 'https://images.unsplash.com/photo-1559839914-ba2ac5cd7b9b?auto=format&fit=crop&w=400&q=80',
+  "Amul Taaza Flavoured Milk": 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=400&q=80',
   'Packaged Water': 'https://images.unsplash.com/photo-1559839914-ba2ac5cd7b9b?auto=format&fit=crop&w=400&q=80',
   'Sparkling Water': 'https://images.unsplash.com/photo-1559839914-ba2ac5cd7b9b?auto=format&fit=crop&w=400&q=80',
 
@@ -799,39 +794,44 @@ const ITEM_DETAILS_MAP = {
   'Rock Salt': { unit: '1 kg', price: 65, originalPrice: 80, rating: 4.8, badge: 'Himalayan Pink' },
   'Iodized Salt': { unit: '1 kg pack', price: 26, originalPrice: 30, rating: 4.8, badge: 'Vacuum Evaporated' },
 
-  // Snacks
-  'Potato Chips': { unit: '100g pack', price: 25, originalPrice: 30, rating: 4.7, badge: 'Classic Salted' },
-  'Banana Chips': { unit: '200g pack', price: 75, originalPrice: 90, rating: 4.8, badge: 'Coconut Oil Fry' },
-  'Nachos': { unit: '150g pack', price: 65, originalPrice: 80, rating: 4.7, badge: 'Cheese Jalapeno' },
-  'Cream Biscuits': { unit: '120g pack', price: 35, originalPrice: 40, rating: 4.7, badge: 'Bourbon Choco' },
-  'Glucose Biscuits': { unit: '250g pack', price: 25, originalPrice: 30, rating: 4.8, badge: 'Energy Bite' },
-  'Cookies': { unit: '200g tin', price: 99, originalPrice: 125, rating: 4.8, badge: 'Butter Choco Chip' },
-  'Nuts': { unit: '250g jar', price: 240, originalPrice: 290, rating: 4.9, badge: 'California Almonds' },
-  'Dry Fruits': { unit: '250g mix', price: 290, originalPrice: 350, rating: 4.9, badge: 'Cashew & Raisin' },
-  'Granola Bars': { unit: 'Pack of 4', price: 120, originalPrice: 150, rating: 4.8, badge: 'Oats & Honey' },
-  'Mixture': { unit: '200g pack', price: 48, originalPrice: 60, rating: 4.8, badge: 'South Madras' },
-  'Sev': { unit: '200g pack', price: 42, originalPrice: 55, rating: 4.7, badge: 'Crispy Besan' },
-  'Bhujia': { unit: '200g pack', price: 50, originalPrice: 65, rating: 4.8, badge: 'Bikaneri Spice' },
-  'Chocolates': { unit: '130g bar', price: 85, originalPrice: 100, rating: 4.9, badge: 'Silky Cocoa' },
-  'Candy': { unit: '150g pack', price: 35, originalPrice: 45, rating: 4.6, badge: 'Fruity Pop' },
-  'Toffee': { unit: '200g pouch', price: 45, originalPrice: 55, rating: 4.7, badge: 'Caramel Chew' },
-  'Salted Popcorn': { unit: '85g tub', price: 45, originalPrice: 55, rating: 4.7, badge: 'Theater Style' },
-  'Caramel Popcorn': { unit: '100g tub', price: 75, originalPrice: 95, rating: 4.8, badge: 'Sweet Glaze' },
+  // Snacks & Munchies (Indian Quick Commerce Favorites)
+  "Haldiram's Aloo Bhujia": { unit: '200g pack', price: 48, originalPrice: 55, rating: 4.9, badge: 'Desi Namkeen' },
+  "Haldiram's Khatta Meetha": { unit: '200g pack', price: 45, originalPrice: 55, rating: 4.8, badge: 'Sweet & Tangy' },
+  "Haldiram's Bhujia Sev": { unit: '200g pack', price: 50, originalPrice: 60, rating: 4.9, badge: 'Crispy Bikaneri' },
+  "Murukku Traditional": { unit: '180g pack', price: 42, originalPrice: 50, rating: 4.8, badge: 'South Crunch' },
+  "Lay's India's Magic Masala": { unit: '78g pack', price: 20, originalPrice: 20, rating: 4.9, badge: 'Masala Magic' },
+  "Kurkure Masala Munch": { unit: '85g pack', price: 20, originalPrice: 20, rating: 4.9, badge: 'Tedha Par Mera' },
+  "Bingo Mad Angles Achari": { unit: '66g pack', price: 20, originalPrice: 20, rating: 4.8, badge: 'Achari Masti' },
+  "Kerala Banana Chips": { unit: '200g pack', price: 80, originalPrice: 95, rating: 4.9, badge: 'Coconut Oil Fry' },
+  "Parle-G Gold Biscuits": { unit: '1 kg family pack', price: 75, originalPrice: 85, rating: 4.9, badge: 'G maane Genius' },
+  "Britannia Good Day Butter": { unit: '600g combo pack', price: 95, originalPrice: 120, rating: 4.8, badge: 'Butter Cookies' },
+  "Sunfeast Dark Fantasy": { unit: '300g box', price: 110, originalPrice: 140, rating: 4.9, badge: 'Choco Fills' },
+  "Oreo Double Stuf": { unit: '120g pack', price: 35, originalPrice: 40, rating: 4.8, badge: 'Vanilla Creme' },
+  "Bikaji Gulab Jamun": { unit: '1 kg tin', price: 210, originalPrice: 250, rating: 4.9, badge: 'Desi Ghee Mithai' },
+  "Haldiram's Rasgulla": { unit: '1 kg tin', price: 215, originalPrice: 255, rating: 4.9, badge: 'Spongy Soft' },
+  "Cadbury Dairy Milk Silk": { unit: '150g bar', price: 165, originalPrice: 180, rating: 5.0, badge: 'Pure Silk' },
+  "Ferrero Rocher Moments": { unit: 'Pack of 16', price: 320, originalPrice: 375, rating: 4.9, badge: 'Premium Gift' },
+  "California Roasted Almonds": { unit: '250g jar', price: 245, originalPrice: 290, rating: 4.9, badge: 'Crunchy Protein' },
+  "Premium W320 Cashews": { unit: '250g pack', price: 270, originalPrice: 320, rating: 4.9, badge: 'Whole Cashew' },
+  "Afghan Green Raisins": { unit: '200g pack', price: 95, originalPrice: 120, rating: 4.8, badge: 'Seedless Kismis' },
 
-  // Beverages
-  'Tea Powder': { unit: '500g pack', price: 190, originalPrice: 220, rating: 4.9, badge: 'Assam CTC' },
-  'Green Tea': { unit: '25 tea bags', price: 160, originalPrice: 195, rating: 4.8, badge: 'Darjeeling Detox' },
-  'Instant Coffee': { unit: '100g jar', price: 185, originalPrice: 220, rating: 4.8, badge: 'Rich Aroma' },
-  'Filter Coffee': { unit: '200g pack', price: 120, originalPrice: 145, rating: 4.9, badge: '80:20 Chicory' },
-  'Orange Juice': { unit: '1 L carton', price: 110, originalPrice: 130, rating: 4.8, badge: '100% Pulp' },
-  'Apple Juice': { unit: '1 L carton', price: 115, originalPrice: 135, rating: 4.8, badge: 'Cold Pressed' },
-  'Mixed Fruit Juice': { unit: '1 L carton', price: 105, originalPrice: 125, rating: 4.8, badge: 'Multivitamin' },
-  'Cola': { unit: '750ml bottle', price: 40, originalPrice: 45, rating: 4.7, badge: 'Chilled Fizzy' },
-  'Lemon Drink': { unit: '600ml bottle', price: 35, originalPrice: 40, rating: 4.7, badge: 'Zesty Lime' },
-  'Energy Drinks': { unit: '250ml can', price: 125, originalPrice: 135, rating: 4.7, badge: 'Caffeine Boost' },
-  'Electrolyte Drinks': { unit: '500ml bottle', price: 45, originalPrice: 55, rating: 4.9, badge: 'Tender Coconut' },
-  'Packaged Water': { unit: '1 L bottle', price: 20, originalPrice: 20, rating: 4.8, badge: 'Added Minerals' },
-  'Sparkling Water': { unit: '500ml bottle', price: 60, originalPrice: 70, rating: 4.8, badge: 'Zero Calorie' },
+  // Cold Drinks & Juices (Indian Quick Commerce Favorites)
+  "Frooti Mango Drink": { unit: '1.2 L pet bottle', price: 65, originalPrice: 75, rating: 4.9, badge: 'Real Mango' },
+  "Real Fruit Power Mixed Fruit": { unit: '1 L tetrapak', price: 115, originalPrice: 135, rating: 4.8, badge: 'No Added Color' },
+  "Paper Boat Aamras Mango": { unit: '250ml pouch', price: 35, originalPrice: 40, rating: 4.9, badge: 'Dadi Ka Magic' },
+  "Paper Boat Chilli Guava": { unit: '250ml pouch', price: 35, originalPrice: 40, rating: 4.8, badge: 'Spiced Guava' },
+  "Tender Coconut Water": { unit: '200ml bottle (Pure Elaneer)', price: 45, originalPrice: 50, rating: 4.9, badge: '100% Natural' },
+  "Thums Up Charged": { unit: '750ml bottle', price: 40, originalPrice: 45, rating: 4.9, badge: 'Thunder Taste' },
+  "Sprite Chilled Lime": { unit: '750ml bottle', price: 40, originalPrice: 45, rating: 4.8, badge: 'Clear Hai' },
+  "Amul Kool Kesar Badam": { unit: '200ml can', price: 35, originalPrice: 40, rating: 4.9, badge: 'Rich Saffron Badam' },
+  "Paper Boat Jeera Masala Soda": { unit: '600ml bottle', price: 30, originalPrice: 35, rating: 4.8, badge: 'Chatpata Masala' },
+  "Tata Tea Gold Blend": { unit: '500g pouch', price: 295, originalPrice: 340, rating: 4.9, badge: 'Patti & Long Leaves' },
+  "Brooke Bond Red Label": { unit: '500g pack', price: 260, originalPrice: 295, rating: 4.8, badge: 'Swad Apnepan Ka' },
+  "Bru Instant Coffee": { unit: '100g glass jar', price: 185, originalPrice: 215, rating: 4.8, badge: 'Roasted Chicory' },
+  "Narasu's South Indian Filter Coffee": { unit: '200g pack', price: 110, originalPrice: 130, rating: 4.9, badge: 'Authentic Kaapi' },
+  "Yakult Probiotic Drink": { unit: 'Pack of 5 (65ml each)', price: 90, originalPrice: 100, rating: 4.9, badge: 'Gut Health' },
+  "Bisleri Mineral Water 5L": { unit: '5 L Jar with Handle', price: 70, originalPrice: 75, rating: 4.9, badge: 'Added Minerals' },
+  "Amul Taaza Flavoured Milk": { unit: '200ml tetrapak (Chocolate)', price: 30, originalPrice: 35, rating: 4.8, badge: 'Pure Dairy' },
 
   // Bakery & Breakfast
   'White Bread': { unit: '400g loaf', price: 38, originalPrice: 42, rating: 4.7, badge: 'Daily Soft' },

@@ -33,7 +33,6 @@ const breadImg = 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto
 const onionImg = 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=400&q=80';
 const bananaImg = 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&q=80';
 const oilImg = 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80';
-const chipsImg = 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80';
 const almondsImg = 'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80';
 const peanutButterImg = 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80';
 const cornFlakesImg = 'https://images.unsplash.com/photo-1521483451569-e33803c0330c?auto=format&fit=crop&w=400&q=80';
@@ -435,17 +434,59 @@ export const TODAYS_OFFERS_DATA = [
     inStock: true,
   },
   {
-    id: 'prod-potato-chips-deal',
-    name: 'Crispy Salted Potato Chips',
+    id: 'prod-kurkure-deal',
+    name: 'Kurkure Masala Munch (Tedha Par Mera)',
     category: 'Snacks',
-    unit: '1 pack (100g)',
-    price: 25,
-    originalPrice: 30,
-    discountTag: '17% OFF',
-    badge: 'Crisp Crunch',
-    rating: 4.7,
-    reviews: 140,
-    image: chipsImg,
+    unit: '85g pack',
+    price: 20,
+    originalPrice: 20,
+    discountTag: 'Super Hit',
+    badge: 'Zepto Choice',
+    rating: 4.9,
+    reviews: 320,
+    image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
+    inStock: true,
+  },
+  {
+    id: 'prod-bhujia-deal',
+    name: "Haldiram's Aloo Bhujia Sev",
+    category: 'Snacks',
+    unit: '200g pack',
+    price: 48,
+    originalPrice: 55,
+    discountTag: '13% OFF',
+    badge: 'Desi Namkeen',
+    rating: 4.9,
+    reviews: 410,
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
+    inStock: true,
+  },
+  {
+    id: 'prod-frooti-deal',
+    name: "Frooti Fresh 'N' Juicy Mango Drink",
+    category: 'Beverages',
+    unit: '1.2 L bottle',
+    price: 65,
+    originalPrice: 75,
+    discountTag: '13% OFF',
+    badge: 'Real Mango Pulp',
+    rating: 4.9,
+    reviews: 380,
+    image: 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=400&q=80',
+    inStock: true,
+  },
+  {
+    id: 'prod-paperboat-deal',
+    name: 'Paper Boat Aamras Mango Juice',
+    category: 'Beverages',
+    unit: '250ml pouch',
+    price: 35,
+    originalPrice: 40,
+    discountTag: '12% OFF',
+    badge: 'Dadi Ka Magic',
+    rating: 4.9,
+    reviews: 290,
+    image: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=400&q=80',
     inStock: true,
   }
 ];

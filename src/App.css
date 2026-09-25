@@ -1450,17 +1450,17 @@
 
 .footer-columns-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1.1fr 1.1fr 1.7fr;
+  grid-template-columns: 1.6fr 1.1fr 1.1fr 1.4fr;
   gap: 36px;
   margin-bottom: 40px;
 }
 
-.brand-col .brand-description {
+.brand-col-left .brand-description {
   font-size: 0.875rem;
   color: #4b5563;
   line-height: 1.6;
   margin: 16px 0 20px;
-  max-width: 360px;
+  max-width: 340px;
 }
 
 .footer-contact-info {
@@ -1482,6 +1482,30 @@
   color: #059669;
   margin-top: 2px;
   flex-shrink: 0;
+}
+
+.footer-action-wrap {
+  margin-top: 14px;
+}
+
+.footer-track-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-track-btn:hover {
+  background: #059669;
+  color: #ffffff;
 }
 
 .social-links-row {
@@ -3846,10 +3870,9 @@
   padding: 16px 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   max-height: calc(100vh - 115px);
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .sidebar-sticky-box::-webkit-scrollbar {
@@ -3867,7 +3890,7 @@
   gap: 8px;
   padding: 0 8px 10px;
   border-bottom: 1px solid #f1f5f9;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .sidebar-icon {
@@ -3884,16 +3907,106 @@
 .sidebar-divider {
   height: 1px;
   background-color: #f1f5f9;
-  margin: 4px 0;
+  margin: 2px 0;
 }
 
 .sidebar-categories-list {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  max-height: 240px;
+  gap: 2px;
+  flex: 1;
+  min-height: 280px;
+  max-height: calc(100vh - 280px);
   overflow-y: auto;
   padding-right: 4px;
+}
+
+.sidebar-quick-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.sidebar-tool-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.tool-pill-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-tool-pill.assistant-pill {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+.sidebar-tool-pill.assistant-pill:hover {
+  background: #d1fae5;
+  border-color: #059669;
+}
+
+.pill-sparkle {
+  color: #059669;
+}
+
+.sidebar-tool-pill.budget-pill {
+  background: #fef3c7;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.sidebar-tool-pill.budget-pill:hover {
+  background: #fde68a;
+  border-color: #d97706;
+}
+
+.pill-badge {
+  background: #d97706;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 8px;
+}
+
+.sidebar-mini-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.mini-guarantee-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-guarantee-text strong {
+  font-size: 0.74rem;
+  color: #0f172a;
+}
+
+.mini-guarantee-text span {
+  font-size: 0.66rem;
+  color: #64748b;
 }
 
 .sidebar-categories-list::-webkit-scrollbar {

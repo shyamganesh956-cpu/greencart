@@ -14,9 +14,7 @@ import {
   Zap,
   ShoppingBag,
   Bot,
-  Coins,
-  TrendingDown,
-  Leaf
+  Coins
 } from 'lucide-react';
 
 import Navbar from '../components/Navbar';
@@ -366,65 +364,41 @@ export default function CategoryPage({
                 })}
               </div>
 
-              {/* Smart Assistant Sidebar Widget */}
-              <div className="sidebar-promo-card assistant-promo">
-                <div className="promo-card-header">
-                  <div className="promo-avatar-badge">
-                    <Bot size={16} className="promo-bot-icon" />
-                  </div>
-                  <span className="promo-chip-ai">AI Chef</span>
-                </div>
-                <h4>Looking for Recipes?</h4>
-                <p>Type any dish (Dosa, Biryani, Pasta) to get fresh ingredients in 1 click.</p>
+              {/* Compact Quick Tools (AI Assistant & Budget Shopper) */}
+              <div className="sidebar-quick-tools">
                 <button 
                   type="button" 
-                  className="sidebar-promo-btn"
+                  className="sidebar-tool-pill assistant-pill"
                   onClick={() => setIsAssistantOpen(true)}
+                  title="Ask AI Smart Assistant for Recipe Ingredients"
                 >
-                  <Sparkles size={14} />
-                  <span>Ask Smart Assistant</span>
-                </button>
-              </div>
-
-              {/* Budget Shopping Sidebar Widget */}
-              <div className="sidebar-promo-card budget-promo">
-                <div className="promo-card-header">
-                  <div className="promo-avatar-badge budget-badge">
-                    <Coins size={16} className="promo-coin-icon" />
+                  <div className="tool-pill-left">
+                    <Bot size={16} className="pill-icon" />
+                    <span>AI Recipe Assistant</span>
                   </div>
-                  <span className="promo-chip-saver">Budget Saver</span>
-                </div>
-                <h4>Shop by Budget</h4>
-                <p>Curate a balanced grocery basket under ₹300, ₹500 or ₹1000 with maximum savings.</p>
+                  <Sparkles size={13} className="pill-sparkle" />
+                </button>
+
                 <button 
                   type="button" 
-                  className="sidebar-promo-btn"
+                  className="sidebar-tool-pill budget-pill"
                   onClick={() => setIsBudgetOpen(true)}
+                  title="Create a Grocery Basket Under Your Budget"
                 >
-                  <TrendingDown size={14} />
-                  <span>Build Budget Basket</span>
+                  <div className="tool-pill-left">
+                    <Coins size={16} className="pill-icon" />
+                    <span>Budget Shopper</span>
+                  </div>
+                  <span className="pill-badge">₹500</span>
                 </button>
               </div>
 
-              {/* Enhanced Harvest Guarantee Card */}
-              <div className="sidebar-guarantee-card">
-                <div className="guarantee-header-row">
-                  <ShieldCheck size={20} color="#059669" />
+              {/* Compact Sunrise Harvest Guarantee */}
+              <div className="sidebar-mini-guarantee">
+                <ShieldCheck size={16} color="#059669" className="guarantee-icon" />
+                <div className="mini-guarantee-text">
                   <strong>Sunrise Harvest Guarantee</strong>
-                </div>
-                <div className="guarantee-specs-list">
-                  <div className="spec-item">
-                    <Leaf size={13} color="#059669" />
-                    <span>Harvested 6 AM Today</span>
-                  </div>
-                  <div className="spec-item">
-                    <Zap size={13} color="#059669" />
-                    <span>4°C Cold-Chain Transit</span>
-                  </div>
-                  <div className="spec-item">
-                    <CheckCircle2 size={13} color="#059669" />
-                    <span>100% Quality Guaranteed</span>
-                  </div>
+                  <span>6 AM Harvest • 4°C Cold-Chain Delivery</span>
                 </div>
               </div>
             </div>

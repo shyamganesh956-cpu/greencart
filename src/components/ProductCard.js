@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Star, Plus, Minus, Heart } from 'lucide-react';
+import { Star, Plus, Minus, Heart, Leaf } from 'lucide-react';
 
 export default function ProductCard({
   product,
@@ -8,6 +8,7 @@ export default function ProductCard({
   onAddToCart,
   onUpdateQuantity,
   onToggleWishlist,
+  onOpenReviews,
 }) {
   const {
     id,
@@ -107,6 +108,13 @@ export default function ProductCard({
     }
   };
 
+  const handleRatingClick = (e) => {
+    e.stopPropagation();
+    if (onOpenReviews) {
+      onOpenReviews(product);
+    }
+  };
+
   return (
     <div className="product-card">
       {/* Product Image & Badges & Wishlist */}
@@ -152,11 +160,22 @@ export default function ProductCard({
 
       {/* Product Information */}
       <div className="product-info">
-        {/* Rating */}
-        <div className="product-rating-row">
+        {/* Rating (Clickable to open reviews) */}
+        <div 
+          className="product-rating-row clickable-rating" 
+          onClick={handleRatingClick}
+          title="Click to view customer reviews or rate this product"
+        >
           <Star size={13} className="star-icon" fill="#F59E0B" color="#F59E0B" />
           <span className="rating-score">{rating || 4.8}</span>
           <span className="rating-count">({reviews || 95})</span>
+          <span className="reviews-link-hint">Reviews</span>
+        </div>
+
+        {/* Freshness & Quality Tag */}
+        <div className="product-freshness-pill">
+          <Leaf size={11} className="leaf-icon" />
+          <span>Freshness: 98% • Farm Harvested</span>
         </div>
 
         {/* Name */}

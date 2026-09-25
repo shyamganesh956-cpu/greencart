@@ -12,7 +12,11 @@ import {
   Tag,
   ShieldCheck,
   Zap,
-  ShoppingBag
+  ShoppingBag,
+  Bot,
+  Coins,
+  TrendingDown,
+  Leaf
 } from 'lucide-react';
 
 import Navbar from '../components/Navbar';
@@ -21,6 +25,9 @@ import Footer from '../components/Footer';
 import CartDrawer from '../components/CartDrawer';
 import DeliveryTrackerModal from '../components/DeliveryTrackerModal';
 import WishlistModal from '../components/WishlistModal';
+import SmartAssistantModal from '../components/SmartAssistantModal';
+import BudgetShoppingModal from '../components/BudgetShoppingModal';
+import ProductReviewModal from '../components/ProductReviewModal';
 
 import { 
   MAIN_CATEGORIES_15, 
@@ -61,6 +68,9 @@ export default function CategoryPage({
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isTrackerOpen, setIsTrackerOpen] = useState(false);
+  const [isAssistantOpen, setIsAssistantOpen] = useState(false);
+  const [isBudgetOpen, setIsBudgetOpen] = useState(false);
+  const [selectedProductForReview, setSelectedProductForReview] = useState(null);
   const [toastMessage, setToastMessage] = useState('');
 
   const showToast = (msg) => {
@@ -190,6 +200,8 @@ export default function CategoryPage({
         onOpenWishlist={() => setIsWishlistOpen(true)}
         onOpenTracker={() => setIsTrackerOpen(true)}
         onOpenAccount={onOpenAccount}
+        onOpenAssistant={() => setIsAssistantOpen(true)}
+        onOpenBudget={() => setIsBudgetOpen(true)}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         onSearchSubmit={(term) => setSearchQuery(term)}
@@ -354,12 +366,65 @@ export default function CategoryPage({
                 })}
               </div>
 
-              {/* Quick guarantee pill */}
+              {/* Smart Assistant Sidebar Widget */}
+              <div className="sidebar-promo-card assistant-promo">
+                <div className="promo-card-header">
+                  <div className="promo-avatar-badge">
+                    <Bot size={16} className="promo-bot-icon" />
+                  </div>
+                  <span className="promo-chip-ai">AI Chef</span>
+                </div>
+                <h4>Looking for Recipes?</h4>
+                <p>Type any dish (Dosa, Biryani, Pasta) to get fresh ingredients in 1 click.</p>
+                <button 
+                  type="button" 
+                  className="sidebar-promo-btn"
+                  onClick={() => setIsAssistantOpen(true)}
+                >
+                  <Sparkles size={14} />
+                  <span>Ask Smart Assistant</span>
+                </button>
+              </div>
+
+              {/* Budget Shopping Sidebar Widget */}
+              <div className="sidebar-promo-card budget-promo">
+                <div className="promo-card-header">
+                  <div className="promo-avatar-badge budget-badge">
+                    <Coins size={16} className="promo-coin-icon" />
+                  </div>
+                  <span className="promo-chip-saver">Budget Saver</span>
+                </div>
+                <h4>Shop by Budget</h4>
+                <p>Curate a balanced grocery basket under ₹300, ₹500 or ₹1000 with maximum savings.</p>
+                <button 
+                  type="button" 
+                  className="sidebar-promo-btn"
+                  onClick={() => setIsBudgetOpen(true)}
+                >
+                  <TrendingDown size={14} />
+                  <span>Build Budget Basket</span>
+                </button>
+              </div>
+
+              {/* Enhanced Harvest Guarantee Card */}
               <div className="sidebar-guarantee-card">
-                <ShieldCheck size={20} color="#059669" />
-                <div>
+                <div className="guarantee-header-row">
+                  <ShieldCheck size={20} color="#059669" />
                   <strong>Sunrise Harvest Guarantee</strong>
-                  <p>Daily fresh arrivals & 30-min cold chain delivery</p>
+                </div>
+                <div className="guarantee-specs-list">
+                  <div className="spec-item">
+                    <Leaf size={13} color="#059669" />
+                    <span>Harvested 6 AM Today</span>
+                  </div>
+                  <div className="spec-item">
+                    <Zap size={13} color="#059669" />
+                    <span>4°C Cold-Chain Transit</span>
+                  </div>
+                  <div className="spec-item">
+                    <CheckCircle2 size={13} color="#059669" />
+                    <span>100% Quality Guaranteed</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -657,6 +722,7 @@ export default function CategoryPage({
                             showToast(`Added ${p.name} to basket!`);
                           }}
                           onUpdateQuantity={onUpdateQuantity}
+                          onOpenReviews={(p) => setSelectedProductForReview(p)}
                           onToggleWishlist={(p) => {
                             onToggleWishlist(p);
                             showToast(
@@ -711,6 +777,7 @@ export default function CategoryPage({
                                   showToast(`Added ${p.name} to basket!`);
                                 }}
                                 onUpdateQuantity={onUpdateQuantity}
+                                onOpenReviews={(p) => setSelectedProductForReview(p)}
                                 onToggleWishlist={(p) => {
                                   onToggleWishlist(p);
                                   showToast(
@@ -789,6 +856,34 @@ export default function CategoryPage({
         isOpen={isTrackerOpen}
         onClose={() => setIsTrackerOpen(false)}
         orderDetails={activeOrderDetails}
+      />
+
+      {/* Smart Assistant Modal */}
+      <SmartAssistantModal
+        isOpen={isAssistantOpen}
+        onClose={() => setIsAssistantOpen(false)}
+        onAddToCart={(p) => {
+          onAddToCart(p);
+          showToast(`Added ${p.name} to basket!`);
+        }}
+        onOpenBudgetModal={() => setIsBudgetOpen(true)}
+      />
+
+      {/* Budget Shopping Modal */}
+      <BudgetShoppingModal
+        isOpen={isBudgetOpen}
+        onClose={() => setIsBudgetOpen(false)}
+        onAddToCart={(p) => {
+          onAddToCart(p);
+          showToast(`Added ${p.name} to basket!`);
+        }}
+      />
+
+      {/* Product Review Modal */}
+      <ProductReviewModal
+        isOpen={Boolean(selectedProductForReview)}
+        onClose={() => setSelectedProductForReview(null)}
+        product={selectedProductForReview}
       />
     </div>
   );

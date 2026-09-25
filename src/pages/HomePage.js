@@ -22,6 +22,10 @@ import CartDrawer from '../components/CartDrawer';
 import DeliveryTrackerModal from '../components/DeliveryTrackerModal';
 import WishlistModal from '../components/WishlistModal';
 import CookThisMealSection from '../components/CookThisMealSection';
+import ComboBasketsSection from '../components/ComboBasketsSection';
+import SmartAssistantModal from '../components/SmartAssistantModal';
+import BudgetShoppingModal from '../components/BudgetShoppingModal';
+import ProductReviewModal from '../components/ProductReviewModal';
 
 import { 
   CATEGORIES_DATA, 
@@ -80,6 +84,9 @@ export default function HomePage({
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isTrackerOpen, setIsTrackerOpen] = useState(false);
+  const [isAssistantOpen, setIsAssistantOpen] = useState(false);
+  const [isBudgetOpen, setIsBudgetOpen] = useState(false);
+  const [selectedProductForReview, setSelectedProductForReview] = useState(null);
   const [internalOrderDetails, setInternalOrderDetails] = useState({
     orderId: 'GC-84920',
     total: 274,
@@ -331,6 +338,8 @@ export default function HomePage({
         onOpenWishlist={() => setIsWishlistOpen(true)}
         onOpenTracker={propOpenTracker || (() => setIsTrackerOpen(true))}
         onOpenAccount={onOpenAccount}
+        onOpenAssistant={() => setIsAssistantOpen(true)}
+        onOpenBudget={() => setIsBudgetOpen(true)}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         onSearchSubmit={handleSearchSubmit}
@@ -515,6 +524,7 @@ export default function HomePage({
                     isWishlisted={Boolean(wishlist[product.id])}
                     onAddToCart={handleAddToCart}
                     onUpdateQuantity={handleUpdateQuantity}
+                    onOpenReviews={(p) => setSelectedProductForReview(p)}
                     onToggleWishlist={handleToggleWishlist}
                   />
                 ))}
@@ -546,6 +556,11 @@ export default function HomePage({
       <CookThisMealSection
         onAddRecipeToCart={handleAddToCart}
         cartItems={cartItems}
+      />
+
+      {/* 7B. Smart Combo Baskets Section */}
+      <ComboBasketsSection
+        onAddToCart={handleAddToCart}
       />
 
       {/* 7. Special Section 1: "Previous Purchases" ("Buy Again": Milk, Eggs 12pcs, Tomato, Basmati Rice 5kg, Bread) */}
@@ -649,6 +664,28 @@ export default function HomePage({
         isOpen={isTrackerOpen}
         onClose={() => setIsTrackerOpen(false)}
         orderDetails={activeOrderDetails}
+      />
+
+      {/* Smart Assistant Modal */}
+      <SmartAssistantModal
+        isOpen={isAssistantOpen}
+        onClose={() => setIsAssistantOpen(false)}
+        onAddToCart={handleAddToCart}
+        onOpenBudgetModal={() => setIsBudgetOpen(true)}
+      />
+
+      {/* Budget Shopping Modal */}
+      <BudgetShoppingModal
+        isOpen={isBudgetOpen}
+        onClose={() => setIsBudgetOpen(false)}
+        onAddToCart={handleAddToCart}
+      />
+
+      {/* Product Review Modal */}
+      <ProductReviewModal
+        isOpen={Boolean(selectedProductForReview)}
+        onClose={() => setSelectedProductForReview(null)}
+        product={selectedProductForReview}
       />
     </div>
   );

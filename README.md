@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# 🛒 GreenCart - Fresh Groceries & Organic Produce Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive e-commerce web application for ordering farm-fresh groceries, organic vegetables, fruits, dairy, and household essentials with real-time cart management and order tracking.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-19.3.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-Modern_Flex_&_Grid-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Lucide Icons](https://img.shields.io/badge/Icons-Lucide_React-F56565?style=for-the-badge)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **🥦 Interactive Category Catalog:** Browse fresh groceries across multiple categories including Fresh Vegetables, Fruits, Farm Dairy, Whole Grains, Beverages, Snacks, and Household essentials.
+- **⚡ Today's Flash Offers:** Curated daily deals and discounts with countdown savings and special bundle offers.
+- **🛍️ Dynamic Cart Drawer:** 
+  - Slide-out cart interface.
+  - Real-time quantity adjustments (increment, decrement, remove).
+  - Instant subtotal, delivery fee, and grand total calculations.
+- **🍲 "Cook This Meal" Bundles:** One-click recipe bundles that let customers add all ingredients for a specific recipe directly to their cart.
+- **📍 Location Selector:** Interactive delivery address and pincode modal for customized localized availability.
+- **🚚 Live Delivery Tracker:** Real-time order progress modal showing order milestones (Packed, Out for Delivery, Arriving) with live ETA.
+- **💖 Wishlist System:** Save favorite products for quick repurchase.
+- **👤 Customer Account Modal:** Profile details, past order summaries, and saved delivery addresses.
+- **📱 Fully Responsive:** Optimized for desktop, tablet, and mobile shopping experiences.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend:** [React 19](https://react.dev/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Styling:** Modular CSS3 with CSS variables, Flexbox, and CSS Grid
+- **Build Tool:** Create React App (`react-scripts`)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📂 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```text
+jtp-reactapp/
+├── public/
+│   ├── index.html              # HTML entry point
+│   └── manifest.json
+├── src/
+│   ├── assets/                 # Product images, category banners & SVGs
+│   ├── components/
+│   │   ├── AccountModal.js      # User profile & saved addresses
+│   │   ├── BuyAgainSection.js   # Repeat order recommendations
+│   │   ├── CartDrawer.js        # Slide-out shopping cart
+│   │   ├── CategoryCard.js      # Individual category display
+│   │   ├── CategorySection.js   # Category grid
+│   │   ├── CookThisMealSection.js # Recipe meal bundles
+│   │   ├── DeliveryTrackerModal.js # Live tracking & ETA
+│   │   ├── Footer.js            # Links & newsletter
+│   │   ├── FreshTodaySection.js # Featured fresh harvest items
+│   │   ├── Hero.js              # Banner & promo header
+│   │   ├── LocationModal.js     # Address & pincode picker
+│   │   ├── Navbar.js            # Search, location, cart badge
+│   │   ├── OfferSection.js      # Promotional discounts
+│   │   ├── ProductCard.js       # Product listing with Add-to-cart
+│   │   ├── ProductSection.js    # Filterable product grid
+│   │   ├── WhyChooseUs.js       # Trust badges & perks
+│   │   └── WishlistModal.js     # Saved items drawer
+│   ├── data/
+│   │   ├── categoriesCatalogData.js # Categories data
+│   │   └── productsData.js          # Products, offers, and recipe data
+│   ├── pages/
+│   │   ├── HomePage.js          # Main landing storefront
+│   │   └── CategoryPage.js      # Dedicated category browser
+│   ├── App.js                   # State management & routing
+│   ├── App.css                  # Global styles & layout
+│   └── index.js                 # React DOM mount
+├── package.json
+└── README.md
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Make sure you have [Node.js](https://nodejs.org/) (v16 or higher) installed on your machine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/shyamganesh956-cpu/greencart.git
+   ```
 
-## Learn More
+2. **Navigate into the project directory:**
+   ```bash
+   cd greencart
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Install the dependencies:**
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Start the development server:**
+   ```bash
+   npm start
+   ```
 
-### Code Splitting
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📦 Production Build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To create an optimized production build:
 
-### Making a Progressive Web App
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This compiles the static files into the `build/` folder, ready for deployment to Vercel, Netlify, or GitHub Pages.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 👨‍💻 Author
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Shyam Sundar**
+- GitHub: [@shyamganesh956-cpu](https://github.com/shyamganesh956-cpu)

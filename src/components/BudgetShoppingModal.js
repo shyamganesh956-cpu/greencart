@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   Coins, 
   X, 
@@ -82,6 +82,17 @@ export default function BudgetShoppingModal({
       mrpTotal: selected.reduce((sum, i) => sum + i.originalPrice, 0)
     };
   }, [targetBudget, selectedBasketType]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 

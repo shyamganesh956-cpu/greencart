@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Bot, 
   Sparkles, 
@@ -127,6 +127,17 @@ export default function SmartAssistantModal({
     SMART_RECIPE_KNOWLEDGE[0].ingredients.reduce((acc, curr) => ({ ...acc, [curr.id]: true }), {})
   );
   const [addedSuccess, setAddedSuccess] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 

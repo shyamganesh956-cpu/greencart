@@ -76,6 +76,16 @@ export default function CategoryPage({
     setTimeout(() => setToastMessage(''), 3000);
   };
 
+  const handleOpenAssistant = () => {
+    setIsAssistantOpen(true);
+    setIsBudgetOpen(false);
+  };
+
+  const handleOpenBudget = () => {
+    setIsBudgetOpen(true);
+    setIsAssistantOpen(false);
+  };
+
   // Sync initial category if passed or changed externally
   useEffect(() => {
     if (initialCategory) {
@@ -198,8 +208,8 @@ export default function CategoryPage({
         onOpenWishlist={() => setIsWishlistOpen(true)}
         onOpenTracker={() => setIsTrackerOpen(true)}
         onOpenAccount={onOpenAccount}
-        onOpenAssistant={() => setIsAssistantOpen(true)}
-        onOpenBudget={() => setIsBudgetOpen(true)}
+        onOpenAssistant={handleOpenAssistant}
+        onOpenBudget={handleOpenBudget}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         onSearchSubmit={(term) => setSearchQuery(term)}
@@ -369,7 +379,7 @@ export default function CategoryPage({
                 <button 
                   type="button" 
                   className="sidebar-tool-pill assistant-pill"
-                  onClick={() => setIsAssistantOpen(true)}
+                  onClick={handleOpenAssistant}
                   title="Ask AI Smart Assistant for Recipe Ingredients"
                 >
                   <div className="tool-pill-left">
@@ -382,7 +392,7 @@ export default function CategoryPage({
                 <button 
                   type="button" 
                   className="sidebar-tool-pill budget-pill"
-                  onClick={() => setIsBudgetOpen(true)}
+                  onClick={handleOpenBudget}
                   title="Create a Grocery Basket Under Your Budget"
                 >
                   <div className="tool-pill-left">
@@ -840,7 +850,7 @@ export default function CategoryPage({
           onAddToCart(p);
           showToast(`Added ${p.name} to basket!`);
         }}
-        onOpenBudgetModal={() => setIsBudgetOpen(true)}
+        onOpenBudgetModal={handleOpenBudget}
       />
 
       {/* Budget Shopping Modal */}

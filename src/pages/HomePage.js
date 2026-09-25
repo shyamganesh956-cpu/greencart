@@ -115,6 +115,16 @@ export default function HomePage({
     }, 3000);
   };
 
+  const handleOpenAssistant = () => {
+    setIsAssistantOpen(true);
+    setIsBudgetOpen(false);
+  };
+
+  const handleOpenBudget = () => {
+    setIsBudgetOpen(true);
+    setIsAssistantOpen(false);
+  };
+
   // Cart operations
   const handleAddToCart = (product) => {
     if (propAddToCart) {
@@ -338,8 +348,8 @@ export default function HomePage({
         onOpenWishlist={() => setIsWishlistOpen(true)}
         onOpenTracker={propOpenTracker || (() => setIsTrackerOpen(true))}
         onOpenAccount={onOpenAccount}
-        onOpenAssistant={() => setIsAssistantOpen(true)}
-        onOpenBudget={() => setIsBudgetOpen(true)}
+        onOpenAssistant={handleOpenAssistant}
+        onOpenBudget={handleOpenBudget}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         onSearchSubmit={handleSearchSubmit}
@@ -671,7 +681,7 @@ export default function HomePage({
         isOpen={isAssistantOpen}
         onClose={() => setIsAssistantOpen(false)}
         onAddToCart={handleAddToCart}
-        onOpenBudgetModal={() => setIsBudgetOpen(true)}
+        onOpenBudgetModal={handleOpenBudget}
       />
 
       {/* Budget Shopping Modal */}

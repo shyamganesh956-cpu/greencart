@@ -3855,6 +3855,12 @@
   align-items: stretch;
 }
 
+.category-main-content {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
 /* Sidebar */
 .category-sidebar {
   position: relative;
@@ -4160,6 +4166,8 @@
   display: flex;
   gap: 8px;
   overflow-x: auto;
+  max-width: 100%;
+  min-width: 0;
   padding-bottom: 12px;
   margin-bottom: 20px;
   scrollbar-width: thin;
@@ -4576,6 +4584,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
+  min-width: 0;
 }
 
 .overview-hero-card {
@@ -4600,8 +4610,10 @@
 
 .all-15-categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .category-overview-card {
@@ -7197,6 +7209,42 @@
 
 .combo-add-btn.success {
   background: #10b981;
+}
+
+/* --------------------------------------------------------------------------
+   Modal Backdrop Fade (Fixed Full-Screen Overlay for Assistant, Budget, Reviews)
+   -------------------------------------------------------------------------- */
+.modal-backdrop-fade {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: fadeIn 0.2s ease;
+  overflow-y: auto;
+}
+
+@keyframes modalScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* --------------------------------------------------------------------------

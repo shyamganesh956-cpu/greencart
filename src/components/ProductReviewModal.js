@@ -67,6 +67,17 @@ export default function ProductReviewModal({
     }
   }, [product]);
 
+  useEffect(() => {
+    if (isOpen && product) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, product]);
+
   if (!isOpen || !product) return null;
 
   const handleSubmitReview = (e) => {

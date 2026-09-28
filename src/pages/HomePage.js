@@ -4,8 +4,7 @@ import {
   TrendingUp, 
   CheckCircle2, 
   X, 
-  Filter, 
-  UtensilsCrossed 
+  Filter 
 } from 'lucide-react';
 
 import Navbar from '../components/Navbar';
@@ -26,7 +25,6 @@ import ComboBasketsSection from '../components/ComboBasketsSection';
 import SmartAssistantModal from '../components/SmartAssistantModal';
 import BudgetShoppingModal from '../components/BudgetShoppingModal';
 import ProductReviewModal from '../components/ProductReviewModal';
-import TamilNaduSpecialsSection from '../components/TamilNaduSpecialsSection';
 
 import { 
   CATEGORIES_DATA, 
@@ -35,7 +33,6 @@ import {
   RECOMMENDED_FOR_YOU_DATA, 
   MOST_PURCHASED_DATA, 
   FRESH_TODAY_DATA,
-  MEAT_SEAFOOD_DATA,
   ALL_PRODUCTS 
 } from '../data/productsData';
 
@@ -556,20 +553,6 @@ export default function HomePage({
         onOpenDetail={onOpenProductDetail}
       />
 
-      {/* 5B. Namma Tamil Nadu Specials & Regional Brands */}
-      <TamilNaduSpecialsSection
-        cartItems={cartItems}
-        wishlist={wishlist}
-        onAddToCart={handleAddToCart}
-        onUpdateQuantity={handleUpdateQuantity}
-        onToggleWishlist={handleToggleWishlist}
-        onOpenReviews={(p) => setSelectedProductForReview(p)}
-        onOpenProductDetail={onOpenProductDetail}
-        onExploreCategory={(catNum) => {
-          if (onNavigateToCategoryPage) onNavigateToCategoryPage(catNum);
-        }}
-      />
-
       {/* 6. Special Section 3: "Today's Offers" (Apple 180->149, Tomato 40->30, Oil 160->145, Chips 30->25) */}
       <OfferSection
         products={TODAYS_OFFERS_DATA}
@@ -634,24 +617,6 @@ export default function HomePage({
         onOpenDetail={onOpenProductDetail}
         onOpenReviews={(p) => setSelectedProductForReview(p)}
         onViewAll={() => showToast('Showing top pantry essentials')}
-      />
-
-      {/* 10. Meat & Seafood Section */}
-      <ProductSection
-        id="meat-seafood"
-        title="Meat &amp; Seafood"
-        subtitle="Fresh tender chicken breast, mutton curry cut, wild Atlantic salmon, and coastal cleaned prawns"
-        badgeText="100% Antibiotic Free"
-        icon={UtensilsCrossed}
-        products={MEAT_SEAFOOD_DATA}
-        cartItems={cartItems}
-        wishlist={wishlist}
-        onAddToCart={handleAddToCart}
-        onUpdateQuantity={handleUpdateQuantity}
-        onToggleWishlist={handleToggleWishlist}
-        onOpenDetail={onOpenProductDetail}
-        onOpenReviews={(p) => setSelectedProductForReview(p)}
-        onViewAll={() => showToast('Showing Meat & Seafood')}
       />
 
       {/* 11. Why Choose Us Section */}

@@ -15,6 +15,8 @@ export default function ProductSection({
   onUpdateQuantity,
   onToggleWishlist,
   onViewAll,
+  onOpenDetail,
+  onOpenReviews,
 }) {
   return (
     <section className="section-block" id={id}>
@@ -57,6 +59,8 @@ export default function ProductSection({
               onAddToCart={onAddToCart}
               onUpdateQuantity={onUpdateQuantity}
               onToggleWishlist={onToggleWishlist}
+              onOpenDetail={onOpenDetail}
+              onOpenReviews={onOpenReviews}
             />
           ))}
         </div>

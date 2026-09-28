@@ -113,12 +113,19 @@ export default function CartDrawer({
       setCheckoutStep('cart');
       onClose();
       if (onCheckoutSuccess) {
+        const newOrderId = `GC-${Math.floor(10000 + Math.random() * 90000)}`;
         onCheckoutSuccess({
+          orderId: newOrderId,
           itemsCount: totalItemsCount,
           total: grandTotal,
           deliveryEta: selectedLocation?.eta || '23 mins',
           address: `${houseAddress}, ${city} (${pincode})`,
           paymentMethod: paymentMethod.toUpperCase(),
+          items: [...itemsList],
+          placedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          savings: totalSavings,
+          date: 'Just now',
+          status: 'Packing'
         });
       }
       onClearCart();

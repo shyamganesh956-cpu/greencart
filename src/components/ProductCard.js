@@ -9,6 +9,7 @@ export default function ProductCard({
   onUpdateQuantity,
   onToggleWishlist,
   onOpenReviews,
+  onOpenDetail,
 }) {
   const {
     id,
@@ -31,10 +32,10 @@ export default function ProductCard({
     const catLower = (product.category || '').toLowerCase();
 
     // Check if it's a grocery item that supports 250g, 500g, 1kg
-    const eligibleCategories = ['vegetables', 'fruits', 'grocery & staples', 'staples', 'grains'];
+    const eligibleCategories = ['vegetables', 'fruits', 'grocery & staples', 'staples', 'grains', 'tamil nadu'];
     const isEligible = eligibleCategories.some(c => catLower.includes(c)) || unitLower.includes('kg') || unitLower.includes('500g') || unitLower.includes('250g');
 
-    if (isEligible && !unitLower.includes('pack of') && !unitLower.includes('can') && !unitLower.includes('bottle')) {
+    if (isEligible && !unitLower.includes('pack of') && !unitLower.includes('can') && !unitLower.includes('bottle') && !unitLower.includes('bunch')) {
       const basePrice = defaultPrice || 40;
       const baseOrig = defaultOriginalPrice || Math.round(basePrice * 1.25);
       
@@ -115,8 +116,14 @@ export default function ProductCard({
     }
   };
 
+  const handleCardClick = () => {
+    if (onOpenDetail) {
+      onOpenDetail(product);
+    }
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleCardClick}>
       {/* Product Image & Badges & Wishlist */}
       <div className="product-image-wrap">
         <img 

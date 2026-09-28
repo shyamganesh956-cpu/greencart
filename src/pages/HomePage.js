@@ -26,6 +26,7 @@ import ComboBasketsSection from '../components/ComboBasketsSection';
 import SmartAssistantModal from '../components/SmartAssistantModal';
 import BudgetShoppingModal from '../components/BudgetShoppingModal';
 import ProductReviewModal from '../components/ProductReviewModal';
+import TamilNaduSpecialsSection from '../components/TamilNaduSpecialsSection';
 
 import { 
   CATEGORIES_DATA, 
@@ -52,6 +53,7 @@ export default function HomePage({
   onOpenTracker: propOpenTracker,
   activeOrderDetails: propOrderDetails,
   onCheckoutSuccess: propCheckoutSuccess,
+  onOpenProductDetail,
 }) {
   // Cart state - initialized with Cow Milk (qty 2) to match mockup if not controlled
   const [internalCartItems, setInternalCartItems] = useState({
@@ -535,6 +537,7 @@ export default function HomePage({
                     onAddToCart={handleAddToCart}
                     onUpdateQuantity={handleUpdateQuantity}
                     onOpenReviews={(p) => setSelectedProductForReview(p)}
+                    onOpenDetail={onOpenProductDetail}
                     onToggleWishlist={handleToggleWishlist}
                   />
                 ))}
@@ -550,6 +553,21 @@ export default function HomePage({
         cartItems={cartItems}
         onAddToCart={handleAddToCart}
         onUpdateQuantity={handleUpdateQuantity}
+        onOpenDetail={onOpenProductDetail}
+      />
+
+      {/* 5B. Namma Tamil Nadu Specials & Regional Brands */}
+      <TamilNaduSpecialsSection
+        cartItems={cartItems}
+        wishlist={wishlist}
+        onAddToCart={handleAddToCart}
+        onUpdateQuantity={handleUpdateQuantity}
+        onToggleWishlist={handleToggleWishlist}
+        onOpenReviews={(p) => setSelectedProductForReview(p)}
+        onOpenProductDetail={onOpenProductDetail}
+        onExploreCategory={(catNum) => {
+          if (onNavigateToCategoryPage) onNavigateToCategoryPage(catNum);
+        }}
       />
 
       {/* 6. Special Section 3: "Today's Offers" (Apple 180->149, Tomato 40->30, Oil 160->145, Chips 30->25) */}
@@ -560,6 +578,8 @@ export default function HomePage({
         onAddToCart={handleAddToCart}
         onUpdateQuantity={handleUpdateQuantity}
         onToggleWishlist={handleToggleWishlist}
+        onOpenDetail={onOpenProductDetail}
+        onOpenReviews={(p) => setSelectedProductForReview(p)}
       />
 
       {/* 7. Instamart Signature Feature: "Cook This Meal" 1-Click Recipe Kits */}
@@ -593,6 +613,8 @@ export default function HomePage({
         onAddToCart={handleAddToCart}
         onUpdateQuantity={handleUpdateQuantity}
         onToggleWishlist={handleToggleWishlist}
+        onOpenDetail={onOpenProductDetail}
+        onOpenReviews={(p) => setSelectedProductForReview(p)}
         onViewAll={() => showToast('Displaying curated recommendations')}
       />
 
@@ -609,6 +631,8 @@ export default function HomePage({
         onAddToCart={handleAddToCart}
         onUpdateQuantity={handleUpdateQuantity}
         onToggleWishlist={handleToggleWishlist}
+        onOpenDetail={onOpenProductDetail}
+        onOpenReviews={(p) => setSelectedProductForReview(p)}
         onViewAll={() => showToast('Showing top pantry essentials')}
       />
 
@@ -625,6 +649,8 @@ export default function HomePage({
         onAddToCart={handleAddToCart}
         onUpdateQuantity={handleUpdateQuantity}
         onToggleWishlist={handleToggleWishlist}
+        onOpenDetail={onOpenProductDetail}
+        onOpenReviews={(p) => setSelectedProductForReview(p)}
         onViewAll={() => showToast('Showing Meat & Seafood')}
       />
 

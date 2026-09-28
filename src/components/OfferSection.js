@@ -10,6 +10,8 @@ export default function OfferSection({
   onAddToCart,
   onUpdateQuantity,
   onToggleWishlist,
+  onOpenDetail,
+  onOpenReviews,
 }) {
   // Real-time countdown timer for daily fresh deals: starts at 04:32:18
   const [timeLeft, setTimeLeft] = useState({
@@ -147,6 +149,8 @@ export default function OfferSection({
               onAddToCart={onAddToCart}
               onUpdateQuantity={onUpdateQuantity}
               onToggleWishlist={onToggleWishlist}
+              onOpenDetail={onOpenDetail}
+              onOpenReviews={onOpenReviews}
             />
           ))}
         </div>

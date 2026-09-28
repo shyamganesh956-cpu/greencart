@@ -15,6 +15,9 @@ export default function AccountModal({
   isOpen, 
   onClose,
   currentUser = null,
+  orderHistory = [],
+  onTrackOrder,
+  onReorderItems,
   onLoginSuccess,
   onLogout 
 }) {
@@ -193,41 +196,70 @@ export default function AccountModal({
               {/* Tab 1: Orders */}
               {activeTab === 'orders' && (
                 <div className="acc-tab-content">
-                  <div className="acc-order-card active-order">
-                    <div className="acc-order-header">
-                      <div>
-                        <span className="order-status-badge out-for-delivery">Out for Delivery</span>
-                        <h4 className="order-id-label">Order #GC-84920</h4>
-                      </div>
-                      <span className="order-total-price">₹274</span>
-                    </div>
-                    <p className="order-items-snippet">
-                      Pure Organic Cow Milk (2x), Crisp Royal Himachal Apples (1x)
-                    </p>
-                    <div className="order-eta-row">
-                      <span>⚡ Estimated Arrival: <strong>18 mins</strong></span>
-                      <button 
-                        type="button" 
-                        className="order-track-mini-btn"
-                        onClick={onClose}
-                      >
-                        Track Live
-                      </button>
-                    </div>
-                  </div>
+                  {orderHistory && orderHistory.length > 0 ? (
+                    orderHistory.map((order, idx) => {
+                      const isActive = order.status !== 'Delivered' && order.status !== 'Completed';
+                      const itemsText = order.items && order.items.length > 0
+                        ? order.items.map(i => `${i.product?.name || i.name} (${i.quantity}x)`).join(', ')
+                        : `${order.itemsCount || 2} Farm Fresh Items`;
 
-                  <div className="acc-order-card past-order">
-                    <div className="acc-order-header">
-                      <div>
-                        <span className="order-status-badge delivered">Delivered Yesterday</span>
-                        <h4 className="order-id-label">Order #GC-73194</h4>
-                      </div>
-                      <span className="order-total-price">₹495</span>
+                      return (
+                        <div key={order.orderId || idx} className={`acc-order-card ${isActive ? 'active-order' : 'past-order'}`}>
+                          <div className="acc-order-header">
+                            <div>
+                              <span className={`order-status-badge ${isActive ? 'out-for-delivery' : 'delivered'}`}>
+                                {order.status || (isActive ? 'Out for Delivery' : 'Delivered')}
+                              </span>
+                              <h4 className="order-id-label">Order #{order.orderId}</h4>
+                              <small className="order-date-label">{order.date || 'Today'} • {order.placedAt || '2:30 PM'}</small>
+                            </div>
+                            <span className="order-total-price">₹{order.total}</span>
+                          </div>
+
+                          <p className="order-items-snippet">{itemsText}</p>
+
+                          <div className="order-eta-row">
+                            <span>
+                              {isActive ? (
+                                <>⚡ Arrival: <strong>{order.deliveryEta || '18 mins'}</strong></>
+                              ) : (
+                                <>✅ Completed • {order.paymentMethod || 'UPI'}</>
+                              )}
+                            </span>
+                            <div className="order-actions-mini-group">
+                              <button
+                                type="button"
+                                className="order-track-mini-btn"
+                                onClick={() => {
+                                  if (onTrackOrder) onTrackOrder(order);
+                                  onClose();
+                                }}
+                              >
+                                Track Live
+                              </button>
+                              {order.items && order.items.length > 0 && (
+                                <button
+                                  type="button"
+                                  className="order-reorder-mini-btn"
+                                  onClick={() => {
+                                    if (onReorderItems) onReorderItems(order.items);
+                                  }}
+                                  title="Add all items back to basket"
+                                >
+                                  Reorder
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <div className="acc-orders-empty">
+                      <Package size={36} color="#94a3b8" />
+                      <p>No orders yet. Start your fresh shopping today!</p>
                     </div>
-                    <p className="order-items-snippet">
-                      Premium Basmati Rice (5kg), Fresh Farm Tomatoes (1kg)
-                    </p>
-                  </div>
+                  )}
                 </div>
               )}
 

@@ -43,11 +43,11 @@ export const MAIN_CATEGORIES_15 = [
     subcategories: [
       {
         name: 'Fresh Vegetables',
-        items: ['Tomato', 'Onion', 'Brinjal', 'Capsicum']
+        items: ['Tomato', 'Onion', 'Brinjal', 'Capsicum', 'Country Tomato', 'Small Shallots', 'Murungaikai Drumstick']
       },
       {
         name: 'Leafy Vegetables',
-        items: ['Spinach', 'Coriander', 'Mint', 'Curry Leaves']
+        items: ['Spinach', 'Coriander', 'Mint', 'Curry Leaves', 'Siru Keerai', 'Fresh Banana Leaves']
       },
       {
         name: 'Root Vegetables',
@@ -113,15 +113,15 @@ export const MAIN_CATEGORIES_15 = [
     subcategories: [
       {
         name: 'Milk',
-        items: ['Full Cream Milk', 'Toned Milk', 'Low-Fat Milk']
+        items: ['Full Cream Milk', 'Toned Milk', 'Low-Fat Milk', 'Aavin Nice Milk']
       },
       {
         name: 'Curd & Yogurt',
-        items: ['Curd', 'Greek Yogurt', 'Flavoured Yogurt']
+        items: ['Curd', 'Greek Yogurt', 'Flavoured Yogurt', 'ID Fresh Dosa Batter']
       },
       {
         name: 'Paneer & Tofu',
-        items: ['Paneer', 'Tofu']
+        items: ['Paneer', 'Tofu', 'Milky Mist Paneer']
       },
       {
         name: 'Butter & Cheese',
@@ -175,7 +175,7 @@ export const MAIN_CATEGORIES_15 = [
     subcategories: [
       {
         name: 'Rice & Grains',
-        items: ['Basmati Rice', 'Sona Masoori', 'Brown Rice']
+        items: ['Basmati Rice', 'Sona Masoori', 'Brown Rice', 'BB Royal Ponni Rice']
       },
       {
         name: 'Atta & Flour',
@@ -187,11 +187,11 @@ export const MAIN_CATEGORIES_15 = [
       },
       {
         name: 'Oil & Ghee',
-        items: ['Sunflower Oil', 'Groundnut Oil', 'Ghee']
+        items: ['Sunflower Oil', 'Groundnut Oil', 'Ghee', 'Idhayam Gingelly Oil']
       },
       {
         name: 'Spices & Masala',
-        items: ['Turmeric', 'Chilli Powder', 'Garam Masala']
+        items: ['Turmeric', 'Chilli Powder', 'Garam Masala', 'Aachi Sambar Masala', 'Sakthi Chicken Masala']
       },
       {
         name: 'Sugar & Salt',
@@ -204,13 +204,13 @@ export const MAIN_CATEGORIES_15 = [
     number: 6,
     name: 'Snacks & Munchies',
     slug: 'snacks',
-    itemCount: '20+ Items',
+    itemCount: '24+ Items',
     tagline: 'Desi namkeen, Haldiram bhujia, Lay\'s chips, and Indian teatime biscuits',
     image: snackImg,
     subcategories: [
       {
         name: 'Indian Namkeen & Bhujia',
-        items: ["Haldiram's Aloo Bhujia", "Haldiram's Khatta Meetha", "Haldiram's Bhujia Sev", "Murukku Traditional"]
+        items: ["Haldiram's Aloo Bhujia", "Haldiram's Khatta Meetha", "Haldiram's Bhujia Sev", "Murukku Traditional", "Coimbatore A1 Banana Chips"]
       },
       {
         name: 'Chips & Crisps',
@@ -218,11 +218,11 @@ export const MAIN_CATEGORIES_15 = [
       },
       {
         name: 'Chai Time Biscuits',
-        items: ["Parle-G Gold Biscuits", "Britannia Good Day Butter", "Sunfeast Dark Fantasy", "Oreo Double Stuf"]
+        items: ["Parle-G Gold Biscuits", "Britannia Good Day Butter", "Sunfeast Dark Fantasy", "Oreo Double Stuf", "Britannia Milk Bikis"]
       },
       {
         name: 'Indian Sweets & Mithai',
-        items: ["Bikaji Gulab Jamun", "Haldiram's Rasgulla", "Cadbury Dairy Milk Silk", "Ferrero Rocher Moments"]
+        items: ["Bikaji Gulab Jamun", "Haldiram's Rasgulla", "Cadbury Dairy Milk Silk", "Kovilpatti Kadalai Mittai", "Tirunelveli Halwa"]
       },
       {
         name: 'Healthy Nuts & Dry Fruits',
@@ -235,7 +235,7 @@ export const MAIN_CATEGORIES_15 = [
     number: 7,
     name: 'Cold Drinks & Juices',
     slug: 'beverages',
-    itemCount: '16+ Items',
+    itemCount: '18+ Items',
     tagline: 'Desi mango drinks, Paper Boat juices, Thums Up, and fresh coconut water',
     image: bevImg,
     subcategories: [
@@ -245,11 +245,11 @@ export const MAIN_CATEGORIES_15 = [
       },
       {
         name: 'Cold Drinks & Masala Sodas',
-        items: ["Thums Up Charged", "Sprite Chilled Lime", "Amul Kool Kesar Badam", "Paper Boat Jeera Masala Soda"]
+        items: ["Thums Up Charged", "Sprite Chilled Lime", "Amul Kool Kesar Badam", "Paper Boat Jeera Masala Soda", "Bovonto Grape Soda"]
       },
       {
         name: 'Chai & South Indian Coffee',
-        items: ["Tata Tea Gold Blend", "Brooke Bond Red Label", "Bru Instant Coffee", "Narasu's South Indian Filter Coffee"]
+        items: ["Tata Tea Chakra Gold", "Tata Tea Gold Blend", "Brooke Bond Red Label", "Bru Instant Coffee", "Narasu's South Indian Filter Coffee"]
       },
       {
         name: 'Daily Dairy & Mineral Water',
@@ -492,6 +492,11 @@ const ITEM_IMAGES = {
   'Green Chilli': 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&w=400&q=80',
   'Red Chilli': 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&w=400&q=80',
   'Jalapeño': 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&w=400&q=80',
+  'Country Tomato': tomatoImg,
+  'Small Shallots': 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=400&q=80',
+  'Murungaikai Drumstick': 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=400&q=80',
+  'Siru Keerai': spinachImg,
+  'Fresh Banana Leaves': 'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?auto=format&fit=crop&w=400&q=80',
 
   // Fruits
   'Apple': appleImg,
@@ -527,6 +532,10 @@ const ITEM_IMAGES = {
   'Regular Eggs': eggImg,
   'Brown Eggs': eggImg,
   'Organic Eggs': eggImg,
+  'Aavin Nice Milk': milkImg,
+  'Aavin Green Milk': milkImg,
+  'Milky Mist Paneer': 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=400&q=80',
+  'ID Fresh Dosa Batter': 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=400&q=80',
 
   // Meat & Seafood
   'Whole Chicken': 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=400&q=80',
@@ -546,6 +555,7 @@ const ITEM_IMAGES = {
   'Basmati Rice': riceImg,
   'Sona Masoori': riceImg,
   'Brown Rice': riceImg,
+  'BB Royal Ponni Rice': riceImg,
   'Wheat Atta': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80',
   'Maida': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80',
   'Ragi Flour': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80',
@@ -555,9 +565,13 @@ const ITEM_IMAGES = {
   'Sunflower Oil': 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80',
   'Groundnut Oil': 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80',
   'Ghee': 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=400&q=80',
+  'Idhayam Gingelly Oil': 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80',
   'Turmeric': 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80',
   'Chilli Powder': 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80',
   'Garam Masala': 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80',
+  'Aachi Sambar Masala': 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80',
+  'Sakthi Chicken Masala': 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80',
+  'Anil Roasted Semiya': 'https://images.unsplash.com/photo-1585994192701-f1a505c817ea?auto=format&fit=crop&w=400&q=80',
   'Sugar': 'https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=400&q=80',
   'Rock Salt': 'https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&w=400&q=80',
   'Iodized Salt': 'https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?auto=format&fit=crop&w=400&q=80',
@@ -567,16 +581,20 @@ const ITEM_IMAGES = {
   "Haldiram's Khatta Meetha": 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
   "Haldiram's Bhujia Sev": 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
   "Murukku Traditional": 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80',
+  'Coimbatore A1 Banana Chips': 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
   "Lay's India's Magic Masala": 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
   "Kurkure Masala Munch": 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
   "Bingo Mad Angles Achari": 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=400&q=80',
   "Kerala Banana Chips": 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
   "Parle-G Gold Biscuits": 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80',
   "Britannia Good Day Butter": 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80',
+  "Britannia Milk Bikis": 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80',
   "Sunfeast Dark Fantasy": 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80',
   "Oreo Double Stuf": 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80',
   "Bikaji Gulab Jamun": 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
   "Haldiram's Rasgulla": 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
+  'Kovilpatti Kadalai Mittai': 'https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=400&q=80',
+  'Tirunelveli Halwa': 'https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=400&q=80',
   "Cadbury Dairy Milk Silk": 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
   "Ferrero Rocher Moments": 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80',
   "California Roasted Almonds": 'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80',
@@ -593,6 +611,8 @@ const ITEM_IMAGES = {
   "Sprite Chilled Lime": 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80',
   "Amul Kool Kesar Badam": 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=400&q=80',
   "Paper Boat Jeera Masala Soda": 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80',
+  'Bovonto Grape Soda': 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80',
+  'Tata Tea Chakra Gold': 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80',
   "Tata Tea Gold Blend": 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80',
   "Brooke Bond Red Label": 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80',
   "Bru Instant Coffee": 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80',
@@ -724,6 +744,11 @@ const ITEM_DETAILS_MAP = {
   'Green Chilli': { unit: '100g', price: 12, originalPrice: 18, rating: 4.8, badge: 'Spicy Fresh' },
   'Red Chilli': { unit: '100g', price: 16, originalPrice: 22, rating: 4.7, badge: 'Fiery Pick' },
   'Jalapeño': { unit: '150g', price: 49, originalPrice: 65, rating: 4.8, badge: 'Zesty Mild' },
+  'Country Tomato': { unit: '1 kg', price: 32, originalPrice: 42, rating: 4.9, badge: 'Tangy Farm Fresh' },
+  'Small Shallots': { unit: '500g', price: 38, originalPrice: 48, rating: 4.8, badge: 'Direct Farm Gate' },
+  'Murungaikai Drumstick': { unit: '250g (3-4 pcs)', price: 24, originalPrice: 32, rating: 4.8, badge: 'Tender Green' },
+  'Siru Keerai': { unit: '250g bunch', price: 20, originalPrice: 28, rating: 4.9, badge: 'Sunrise Plucked' },
+  'Fresh Banana Leaves': { unit: 'Pack of 5 leaves', price: 30, originalPrice: 40, rating: 4.9, badge: 'Traditional Cut' },
 
   // Fruits
   'Apple': { unit: '1 kg (4-5 pcs)', price: 149, originalPrice: 180, rating: 4.9, badge: 'Shimla Fresh' },
@@ -748,6 +773,10 @@ const ITEM_DETAILS_MAP = {
   'Full Cream Milk': { unit: '1 L pouch', price: 68, originalPrice: 75, rating: 4.9, badge: 'Pure Buffalo' },
   'Toned Milk': { unit: '1 L pouch', price: 58, originalPrice: 65, rating: 4.9, badge: 'Daily Cow' },
   'Low-Fat Milk': { unit: '1 L carton', price: 72, originalPrice: 80, rating: 4.8, badge: 'Slim Milk' },
+  'Aavin Nice Milk': { unit: '500ml pouch', price: 23, originalPrice: 25, rating: 4.9, badge: 'TN Dairy Pride' },
+  'Aavin Green Milk': { unit: '500ml pouch', price: 25, originalPrice: 27, rating: 4.9, badge: 'Standardized' },
+  'Milky Mist Paneer': { unit: '200g block', price: 115, originalPrice: 130, rating: 4.8, badge: '100% Cow Milk' },
+  'ID Fresh Dosa Batter': { unit: '1 kg pouch', price: 85, originalPrice: 95, rating: 4.9, badge: 'Naturally Fermented' },
   'Curd': { unit: '500g tub', price: 40, originalPrice: 48, rating: 4.8, badge: 'Thick Dahi' },
   'Greek Yogurt': { unit: '400g tub', price: 85, originalPrice: 100, rating: 4.9, badge: 'High Protein' },
   'Flavoured Yogurt': { unit: '150g cup', price: 35, originalPrice: 42, rating: 4.7, badge: 'Blueberry Swirl' },
@@ -786,10 +815,15 @@ const ITEM_DETAILS_MAP = {
   'Chana Dal': { unit: '1 kg', price: 105, originalPrice: 125, rating: 4.7, badge: 'Protein Rich' },
   'Sunflower Oil': { unit: '1 L bottle', price: 145, originalPrice: 160, rating: 4.8, badge: 'Heart Healthy' },
   'Groundnut Oil': { unit: '1 L can', price: 195, originalPrice: 220, rating: 4.8, badge: 'Cold Pressed' },
+  'Idhayam Gingelly Oil': { unit: '1 L bottle', price: 265, originalPrice: 295, rating: 4.9, badge: 'Wood Pressed' },
+  'BB Royal Ponni Rice': { unit: '5 kg bag', price: 285, originalPrice: 320, rating: 4.8, badge: 'Aged 1 Year' },
   'Ghee': { unit: '500ml jar', price: 340, originalPrice: 380, rating: 4.9, badge: 'Danedar Cow' },
   'Turmeric': { unit: '200g pack', price: 45, originalPrice: 55, rating: 4.9, badge: 'Salem Turmeric' },
   'Chilli Powder': { unit: '200g pack', price: 55, originalPrice: 65, rating: 4.8, badge: 'Guntur Fiery' },
   'Garam Masala': { unit: '100g pack', price: 68, originalPrice: 80, rating: 4.9, badge: '12 Whole Spices' },
+  'Aachi Sambar Masala': { unit: '100g pack', price: 36, originalPrice: 42, rating: 4.9, badge: 'Authentic Blend' },
+  'Sakthi Chicken Masala': { unit: '100g pack', price: 38, originalPrice: 45, rating: 4.8, badge: 'Erode Spices' },
+  'Anil Roasted Semiya': { unit: '450g pack', price: 42, originalPrice: 50, rating: 4.8, badge: 'Short Vermicelli' },
   'Sugar': { unit: '1 kg', price: 48, originalPrice: 55, rating: 4.7, badge: 'Sulphur Free' },
   'Rock Salt': { unit: '1 kg', price: 65, originalPrice: 80, rating: 4.8, badge: 'Himalayan Pink' },
   'Iodized Salt': { unit: '1 kg pack', price: 26, originalPrice: 30, rating: 4.8, badge: 'Vacuum Evaporated' },
@@ -799,16 +833,20 @@ const ITEM_DETAILS_MAP = {
   "Haldiram's Khatta Meetha": { unit: '200g pack', price: 45, originalPrice: 55, rating: 4.8, badge: 'Sweet & Tangy' },
   "Haldiram's Bhujia Sev": { unit: '200g pack', price: 50, originalPrice: 60, rating: 4.9, badge: 'Crispy Bikaneri' },
   "Murukku Traditional": { unit: '180g pack', price: 42, originalPrice: 50, rating: 4.8, badge: 'South Crunch' },
+  'Coimbatore A1 Banana Chips': { unit: '200g pouch', price: 75, originalPrice: 90, rating: 4.9, badge: 'Coconut Oil Fried' },
   "Lay's India's Magic Masala": { unit: '78g pack', price: 20, originalPrice: 20, rating: 4.9, badge: 'Masala Magic' },
   "Kurkure Masala Munch": { unit: '85g pack', price: 20, originalPrice: 20, rating: 4.9, badge: 'Tedha Par Mera' },
   "Bingo Mad Angles Achari": { unit: '66g pack', price: 20, originalPrice: 20, rating: 4.8, badge: 'Achari Masti' },
   "Kerala Banana Chips": { unit: '200g pack', price: 80, originalPrice: 95, rating: 4.9, badge: 'Coconut Oil Fry' },
   "Parle-G Gold Biscuits": { unit: '1 kg family pack', price: 75, originalPrice: 85, rating: 4.9, badge: 'G maane Genius' },
   "Britannia Good Day Butter": { unit: '600g combo pack', price: 95, originalPrice: 120, rating: 4.8, badge: 'Butter Cookies' },
+  "Britannia Milk Bikis": { unit: '120g pack', price: 20, originalPrice: 22, rating: 4.8, badge: 'Childhood Favorite' },
   "Sunfeast Dark Fantasy": { unit: '300g box', price: 110, originalPrice: 140, rating: 4.9, badge: 'Choco Fills' },
   "Oreo Double Stuf": { unit: '120g pack', price: 35, originalPrice: 40, rating: 4.8, badge: 'Vanilla Creme' },
   "Bikaji Gulab Jamun": { unit: '1 kg tin', price: 210, originalPrice: 250, rating: 4.9, badge: 'Desi Ghee Mithai' },
   "Haldiram's Rasgulla": { unit: '1 kg tin', price: 215, originalPrice: 255, rating: 4.9, badge: 'Spongy Soft' },
+  'Kovilpatti Kadalai Mittai': { unit: '250g box', price: 60, originalPrice: 75, rating: 4.9, badge: 'GI Tagged Treat' },
+  'Tirunelveli Halwa': { unit: '250g box', price: 120, originalPrice: 145, rating: 5.0, badge: 'Pure Wheat Ghee' },
   "Cadbury Dairy Milk Silk": { unit: '150g bar', price: 165, originalPrice: 180, rating: 5.0, badge: 'Pure Silk' },
   "Ferrero Rocher Moments": { unit: 'Pack of 16', price: 320, originalPrice: 375, rating: 4.9, badge: 'Premium Gift' },
   "California Roasted Almonds": { unit: '250g jar', price: 245, originalPrice: 290, rating: 4.9, badge: 'Crunchy Protein' },
@@ -825,6 +863,8 @@ const ITEM_DETAILS_MAP = {
   "Sprite Chilled Lime": { unit: '750ml bottle', price: 40, originalPrice: 45, rating: 4.8, badge: 'Clear Hai' },
   "Amul Kool Kesar Badam": { unit: '200ml can', price: 35, originalPrice: 40, rating: 4.9, badge: 'Rich Saffron Badam' },
   "Paper Boat Jeera Masala Soda": { unit: '600ml bottle', price: 30, originalPrice: 35, rating: 4.8, badge: 'Chatpata Masala' },
+  'Bovonto Grape Soda': { unit: '750ml bottle', price: 40, originalPrice: 45, rating: 4.8, badge: 'Since 1958' },
+  'Tata Tea Chakra Gold': { unit: '500g pouch', price: 160, originalPrice: 185, rating: 4.9, badge: "TN's #1 Choice" },
   "Tata Tea Gold Blend": { unit: '500g pouch', price: 295, originalPrice: 340, rating: 4.9, badge: 'Patti & Long Leaves' },
   "Brooke Bond Red Label": { unit: '500g pack', price: 260, originalPrice: 295, rating: 4.8, badge: 'Swad Apnepan Ka' },
   "Bru Instant Coffee": { unit: '100g glass jar', price: 185, originalPrice: 215, rating: 4.8, badge: 'Roasted Chicory' },

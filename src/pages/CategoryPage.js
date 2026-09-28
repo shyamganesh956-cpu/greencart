@@ -46,7 +46,8 @@ export default function CategoryPage({
   onToggleWishlist,
   onOpenTracker,
   activeOrderDetails,
-  onCheckoutSuccess
+  onCheckoutSuccess,
+  onOpenProductDetail
 }) {
   // Selected category (number, e.g. 1 for Vegetables, null for All)
   const [selectedCategoryNum, setSelectedCategoryNum] = useState(
@@ -707,6 +708,7 @@ export default function CategoryPage({
                           }}
                           onUpdateQuantity={onUpdateQuantity}
                           onOpenReviews={(p) => setSelectedProductForReview(p)}
+                          onOpenDetail={onOpenProductDetail}
                           onToggleWishlist={(p) => {
                             onToggleWishlist(p);
                             showToast(
@@ -762,6 +764,7 @@ export default function CategoryPage({
                                 }}
                                 onUpdateQuantity={onUpdateQuantity}
                                 onOpenReviews={(p) => setSelectedProductForReview(p)}
+                                onOpenDetail={onOpenProductDetail}
                                 onToggleWishlist={(p) => {
                                   onToggleWishlist(p);
                                   showToast(

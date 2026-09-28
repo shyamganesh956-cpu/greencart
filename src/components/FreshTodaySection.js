@@ -6,6 +6,7 @@ export default function FreshTodaySection({
   cartItems = {},
   onAddToCart,
   onUpdateQuantity,
+  onOpenDetail,
 }) {
   if (!products || products.length === 0) return null;
 
@@ -33,7 +34,12 @@ export default function FreshTodaySection({
           {products.map((product) => {
             const inCartQty = cartItems[product.id]?.quantity || 0;
             return (
-              <div key={product.id} className="fresh-today-card">
+              <div 
+                key={product.id} 
+                className="fresh-today-card"
+                onClick={() => onOpenDetail && onOpenDetail(product)}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="fresh-today-img-wrap">
                   <img 
                     src={product.image} 

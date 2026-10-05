@@ -84,10 +84,11 @@ export default function DeliveryTrackerModal({
           <div className="tracker-eta-left">
             <Clock size={20} className="tracker-eta-clock" />
             <div>
-              <span className="tracker-eta-label">ESTIMATED ARRIVAL</span>
+              <span className="tracker-eta-label">ESTIMATED ARRIVAL (SMART ETA)</span>
               <div className="tracker-eta-time">
                 {currentStep === 3 ? 'Delivered Just Now!' : `Within ${eta}`}
               </div>
+              <span className="smart-eta-sub">Prep 6m + Hub Pickup 4m + Transit 8m</span>
             </div>
           </div>
           <div className="tracker-eta-status">
@@ -95,6 +96,17 @@ export default function DeliveryTrackerModal({
             {currentStep === 1 && <span className="status-badge packed">Packing</span>}
             {currentStep === 2 && <span className="status-badge out">On the Way 🚀</span>}
             {currentStep === 3 && <span className="status-badge delivered">Delivered 🎉</span>}
+          </div>
+        </div>
+
+        {/* Customer Delivery OTP Display */}
+        <div className="tracker-customer-otp-banner">
+          <div className="otp-left">
+            <span className="otp-micro-title">YOUR DELIVERY OTP (SHARE WITH RIDER)</span>
+            <div className="otp-digit-display">{orderDetails?.deliveryOtp || '4826'}</div>
+          </div>
+          <div className="otp-info-text">
+            <span>Give this 4-digit code to <strong>Ravi Kumar</strong> at your doorstep to verify receipt.</span>
           </div>
         </div>
 

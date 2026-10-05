@@ -811,7 +811,8 @@ export default function CategoryPage({
         onUpdateQuantity={onUpdateQuantity}
         onRemoveItem={onRemoveItem}
         onClearCart={onClearCart}
-        selectedLocation={{ area: 'Gandhipuram', city: 'Coimbatore', eta: '23 mins' }}
+        selectedLocation={{ area: 'Gandhipuram', city: 'Coimbatore', eta: '18 mins' }}
+        onAddToCart={onAddToCart}
         onCheckoutSuccess={(orderSummary) => {
           if (onCheckoutSuccess) {
             onCheckoutSuccess(orderSummary);

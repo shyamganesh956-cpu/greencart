@@ -25,12 +25,14 @@ export default function CartDrawer({
   onRemoveItem,
   onClearCart,
   selectedLocation,
-  onCheckoutSuccess
+  onCheckoutSuccess,
+  onAddToCart
 }) {
   const [couponCode, setCouponCode] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState(null); // 'WELCOME10', 'FRESH50'
   const [couponError, setCouponError] = useState('');
   const [selectedTip, setSelectedTip] = useState(10); // ₹10 default tip
+  const [allowSubstitution, setAllowSubstitution] = useState(true);
   
   // Checkout flow state (drawer vs checkout form)
   const [checkoutStep, setCheckoutStep] = useState('cart'); // 'cart' | 'checkout'
@@ -41,13 +43,18 @@ export default function CartDrawer({
   const [customerPhone, setCustomerPhone] = useState('9876543210');
   const [houseAddress, setHouseAddress] = useState('Flat 402, Green Meadows, Cross Cut Road');
   const [city, setCity] = useState('Coimbatore');
-  const [pincode, setPincode] = useState('628001');
+  const [pincode, setPincode] = useState('641012');
   const [paymentMethod, setPaymentMethod] = useState('upi'); // 'upi', 'card', 'cod'
 
   if (!isOpen) return null;
 
   const itemsList = Object.values(cartItems).filter((item) => item.quantity > 0);
   const totalItemsCount = itemsList.reduce((sum, item) => sum + item.quantity, 0);
+
+  // Smart Cart Health & Recipe Detection Logic
+  const cartNamesLower = itemsList.map(it => (it.product.name || '').toLowerCase()).join(' ');
+  const hasBiryaniMatch = cartNamesLower.includes('rice') || cartNamesLower.includes('chicken') || cartNamesLower.includes('onion') || cartNamesLower.includes('tomato');
+  const hasGingerGarlic = cartNamesLower.includes('ginger') || cartNamesLower.includes('garlic');
 
   // Calculations
   const mrpTotal = itemsList.reduce(
@@ -112,20 +119,67 @@ export default function CartDrawer({
       setIsPlacingOrder(false);
       setCheckoutStep('cart');
       onClose();
+
+      // Multi-Vendor Smart Order Splitter Generation
+      const sellerGroups = {};
+      itemsList.forEach((it) => {
+        const sId = it.product.sellerId || (it.product.name.toLowerCase().includes('milk') ? 'seller-aavin' : 'seller-nilgiris');
+        const sName = it.product.sellerName || (sId === 'seller-aavin' ? 'Aavin Dairy Producers Co-op' : 'Nilgiris Organic Farms');
+        const sCategory = sId === 'seller-aavin' ? 'Dairy Products' : 'Vegetables & Fruits';
+        const sComm = sId === 'seller-aavin' ? 8 : 8;
+
+        if (!sellerGroups[sId]) {
+          sellerGroups[sId] = {
+            subOrderId: `SUB-${Math.floor(1000 + Math.random() * 9000)}`,
+            sellerId: sId,
+            sellerName: sName,
+            sellerCategory: sCategory,
+            status: 'placed',
+            commissionRate: sComm,
+            items: [],
+            subtotal: 0,
+            commission: 0,
+            sellerPayout: 0
+          };
+        }
+
+        const itemTotal = it.product.price * it.quantity;
+        sellerGroups[sId].items.push({
+          id: it.product.id,
+          name: it.product.name,
+          unit: it.product.unit,
+          price: it.product.price,
+          quantity: it.quantity,
+          total: itemTotal
+        });
+        sellerGroups[sId].subtotal += itemTotal;
+        sellerGroups[sId].commission = Math.round(sellerGroups[sId].subtotal * (sComm / 100));
+        sellerGroups[sId].sellerPayout = sellerGroups[sId].subtotal - sellerGroups[sId].commission;
+      });
+
+      const newOrderId = `GC-${Math.floor(10000 + Math.random() * 90000)}`;
+      const randomOtp = Math.floor(1000 + Math.random() * 9000).toString();
+
       if (onCheckoutSuccess) {
-        const newOrderId = `GC-${Math.floor(10000 + Math.random() * 90000)}`;
         onCheckoutSuccess({
           orderId: newOrderId,
           itemsCount: totalItemsCount,
           total: grandTotal,
-          deliveryEta: selectedLocation?.eta || '23 mins',
+          deliveryEta: selectedLocation?.eta || '18 mins',
           address: `${houseAddress}, ${city} (${pincode})`,
+          area: 'Gandhipuram',
           paymentMethod: paymentMethod.toUpperCase(),
           items: [...itemsList],
           placedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
           savings: totalSavings,
           date: 'Just now',
-          status: 'Packing'
+          status: 'placed',
+          deliveryOtp: randomOtp,
+          assignedRiderId: 'rider-101',
+          assignedRiderName: 'Ravi Kumar',
+          allowSubstitution,
+          isSplitOrder: Object.keys(sellerGroups).length > 1,
+          subOrders: Object.values(sellerGroups)
         });
       }
       onClearCart();
@@ -184,6 +238,36 @@ export default function CartDrawer({
                 />
               </div>
             </div>
+
+            {/* Smart Cart Health & Recipe Matcher Banner */}
+            {hasBiryaniMatch && !hasGingerGarlic && (
+              <div className="smart-cart-health-banner">
+                <div className="health-left">
+                  <Sparkles size={16} className="sparkle-icon" />
+                  <div>
+                    <strong>🧠 Smart Cart Health: Biryani Ingredients Detected!</strong>
+                    <p>You have rice/chicken/onions! Missing: <strong>Fresh Ginger Garlic Paste</strong>.</p>
+                  </div>
+                </div>
+                <button 
+                  type="button" 
+                  className="btn-add-missing-recipe"
+                  onClick={() => {
+                    if (onAddToCart) {
+                      onAddToCart({
+                        id: 'prod-gg-paste',
+                        name: 'Fresh Aromatic Ginger Garlic Paste',
+                        price: 35,
+                        unit: '150g jar',
+                        image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80'
+                      });
+                    }
+                  }}
+                >
+                  + Add for ₹35
+                </button>
+              </div>
+            )}
 
             {/* Cart Items List */}
             <div className="cart-items-scroll">
@@ -538,10 +622,33 @@ export default function CartDrawer({
                 </div>
               </div>
 
+              {/* Smart Multi-Vendor Order Splitter & Substitution */}
+              <div className="checkout-smart-block">
+                <div className="smart-splitter-preview">
+                  <Sparkles size={16} className="sparkle-icon" />
+                  <div>
+                    <strong>⚡ Smart Multi-Vendor Fulfillment</strong>
+                    <p>Sourced from local farms & dark stores: Aavin Dairy Co-op, Nilgiris Organics, Kovai Artisanal.</p>
+                  </div>
+                </div>
+
+                <label className="substitute-checkbox-label">
+                  <input 
+                    type="checkbox"
+                    checked={allowSubstitution}
+                    onChange={(e) => setAllowSubstitution(e.target.checked)}
+                  />
+                  <div>
+                    <strong>Allow Smart Brand Substitution</strong>
+                    <span>If an item is out of stock at the dark-store, replace with a similar fresh local brand automatically.</span>
+                  </div>
+                </label>
+              </div>
+
               {/* Order Final Summary */}
               <div className="checkout-summary-pill">
                 <span>Total Payable: <strong>₹{grandTotal}</strong></span>
-                <span className="eta-badge">⚡ 30-Min Cold Chain Delivery</span>
+                <span className="eta-badge">⚡ 18-Min Cold Chain Delivery</span>
               </div>
             </div>
 

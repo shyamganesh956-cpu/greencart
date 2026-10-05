@@ -782,7 +782,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-idhayam-oil',
-    name: 'Idhayam Pure Sesame Gingelly Oil (நல்லெண்ணெய்)',
+    name: 'Idhayam Pure Sesame Gingelly Oil',
     category: 'Grocery & Staples',
     unit: '1 L bottle',
     price: 265,
@@ -796,7 +796,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-ponni-rice',
-    name: 'BB Royal Deluxe Ponni Boiled Rice (பொன்னி அரிசி)',
+    name: 'BB Royal Deluxe Ponni Boiled Rice',
     category: 'Grocery & Staples',
     unit: '5 kg bag',
     price: 285,
@@ -810,7 +810,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-ooty-carrot',
-    name: 'Ooty Sweet Crisp Carrots (ஊட்டி கேரட்)',
+    name: 'Ooty Sweet Crisp Carrots',
     category: 'Vegetables',
     unit: '500g pack',
     price: 45,
@@ -824,7 +824,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-chinna-vengayam',
-    name: 'Small Sambar Shallots (சின்ன வெங்காயம்)',
+    name: 'Small Sambar Shallots',
     category: 'Vegetables',
     unit: '500g net',
     price: 38,
@@ -838,7 +838,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-nattu-thakkali',
-    name: 'Country Tomatoes / Nattu Thakkali (நாட்டு தக்காளி)',
+    name: 'Country Tomatoes / Farm Fresh Tomatoes',
     category: 'Vegetables',
     unit: '1 kg',
     price: 32,
@@ -852,7 +852,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-murungaikai',
-    name: 'Fresh Tender Murungaikai / Drumstick (முருங்கைக்காய்)',
+    name: 'Fresh Tender Garden Drumstick',
     category: 'Vegetables',
     unit: '250g (3-4 pcs)',
     price: 24,
@@ -894,7 +894,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-narasus-coffee',
-    name: "Narasu's Udhayam Filter Coffee (நரசுஸ் உதயம்)",
+    name: "Narasu's Udhayam Filter Coffee",
     category: 'Cold Drinks & Juices',
     unit: '200g pack',
     price: 95,
@@ -914,7 +914,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
     price: 160,
     originalPrice: 185,
     discountTag: '13% OFF',
-    badge: "TN's #1 Choice",
+    badge: "Regional #1 Choice",
     rating: 4.9,
     reviews: 460,
     image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80',
@@ -936,7 +936,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-kovilpatti-chikki',
-    name: 'Kovilpatti Kadalai Mittai / Chikki (கடலை மிட்டாய்)',
+    name: 'Kovilpatti Crisp Peanut Chikki',
     category: 'Snacks & Munchies',
     unit: '250g box',
     price: 60,
@@ -950,7 +950,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-thirunelveli-halwa',
-    name: 'Tirunelveli Pure Ghee Wheat Halwa (திருநெல்வேலி அல்வா)',
+    name: 'Tirunelveli Pure Ghee Wheat Halwa',
     category: 'Snacks & Munchies',
     unit: '250g box',
     price: 120,
@@ -964,7 +964,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-bovonto-soda',
-    name: 'Bovonto Carbonated Grape Soda (போவண்டோ)',
+    name: 'Bovonto Carbonated Grape Soda',
     category: 'Cold Drinks & Juices',
     unit: '750ml bottle',
     price: 40,
@@ -978,7 +978,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-id-batter',
-    name: 'ID Fresh Idly & Dosa Batter (தோசை மாவு)',
+    name: 'ID Fresh Idly & Dosa Batter',
     category: 'Dairy & Eggs',
     unit: '1 kg pouch',
     price: 85,
@@ -1006,7 +1006,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-banana-leaves',
-    name: 'Traditional Fresh Banana Leaves (வாழை இலை)',
+    name: 'Traditional Fresh Banana Leaves',
     category: 'Vegetables',
     unit: 'Pack of 5 leaves',
     price: 30,
@@ -1026,7 +1026,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
     price: 20,
     originalPrice: 22,
     discountTag: 'DAILY CRUNCH',
-    badge: 'Tamil Favorite',
+    badge: 'Classic Favorite',
     rating: 4.8,
     reviews: 510,
     image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80',
@@ -1034,7 +1034,7 @@ export const TAMIL_NADU_SPECIALS_DATA = [
   },
   {
     id: 'tn-siru-keerai',
-    name: 'Fresh Siru Keerai / Mulaikeerai bunch (கீரைக்கட்டு)',
+    name: 'Fresh Farm Baby Spinach Greens bunch',
     category: 'Vegetables',
     unit: '250g bunch',
     price: 20,
@@ -1215,13 +1215,13 @@ export const COOK_THIS_MEAL_RECIPES = [
     emoji: '🍗',
     time: '35 mins',
     servings: '3 Servings',
-    badge: 'Tamil Nadu Special',
+    badge: 'Regional Farm Special',
     image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80',
     ingredients: [
       { id: 'prod-chicken-cb', name: 'Fresh Tender Chicken (Curry Cut)', unit: '500g', price: 185, image: chickenImg },
-      { id: 'tn-chinna-vengayam', name: 'Small Sambar Shallots (சின்ன வெங்காயம்)', unit: '500g', price: 38, image: onionImg },
+      { id: 'tn-chinna-vengayam', name: 'Small Sambar Shallots', unit: '500g', price: 38, image: onionImg },
       { id: 'tn-sakthi-chicken', name: 'Sakthi Pure Chicken Masala Powder', unit: '100g pack', price: 38, image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80' },
-      { id: 'tn-idhayam-oil', name: 'Idhayam Pure Gingelly Oil (நல்லெண்ணெய்)', unit: '1 L', price: 265, image: oilImg },
+      { id: 'tn-idhayam-oil', name: 'Idhayam Pure Sesame Gingelly Oil', unit: '1 L', price: 265, image: oilImg },
     ]
   },
   {
@@ -1231,11 +1231,11 @@ export const COOK_THIS_MEAL_RECIPES = [
     emoji: '☕',
     time: '15 mins',
     servings: '3-4 Servings',
-    badge: 'Namma Tiffin',
+    badge: 'Signature Breakfast',
     image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80',
     ingredients: [
       { id: 'tn-id-batter', name: 'ID Fresh Idly & Dosa Batter', unit: '1 kg', price: 85, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=400&q=80' },
-      { id: 'tn-murungaikai', name: 'Fresh Tender Murungaikai / Drumstick', unit: '250g', price: 24, image: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=400&q=80' },
+      { id: 'tn-murungaikai', name: 'Fresh Tender Garden Drumstick', unit: '250g', price: 24, image: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=400&q=80' },
       { id: 'tn-aachi-sambar', name: 'Aachi Authentic Sambar Masala', unit: '100g', price: 36, image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80' },
       { id: 'tn-narasus-coffee', name: "Narasu's Udhayam Filter Coffee Powder", unit: '200g', price: 95, image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80' },
     ]

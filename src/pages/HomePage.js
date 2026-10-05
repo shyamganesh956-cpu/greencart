@@ -643,8 +643,9 @@ export default function HomePage({
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
         onClearCart={handleClearCart}
-        selectedLocation={{ area: 'Gandhipuram', city: 'Coimbatore', eta: '23 mins' }}
+        selectedLocation={{ area: 'Gandhipuram', city: 'Coimbatore', eta: '18 mins' }}
         onCheckoutSuccess={handleCheckoutSuccess}
+        onAddToCart={handleAddToCart}
       />
 
       {/* Wishlist Modal */}

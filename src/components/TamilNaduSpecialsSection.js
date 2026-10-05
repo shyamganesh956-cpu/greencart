@@ -21,13 +21,13 @@ export default function TamilNaduSpecialsSection({
           <div className="header-left">
             <div className="tamil-badge-pill">
               <MapPin size={14} className="pin-icon" />
-              <span>நம்ம ஊரு மளிகை • Namma Tamil Nadu Specials</span>
+              <span>Regional Farm Fresh Specials • Heritage Staples</span>
             </div>
             <h2 className="tamil-section-title">
-              Authentic Tamil Nadu Brands &amp; Regional Favorites
+              Authentic Regional Brands &amp; Heritage Farm Favorites
             </h2>
             <p className="tamil-section-desc">
-              From fresh morning Aavin milk &amp; Ooty carrots to wood-pressed Idhayam gingelly oil, Kovilpatti kadalai mittai, and frothy Narasu’s filter coffee.
+              From fresh morning dairy milk &amp; Ooty carrots to wood-pressed gingelly oil, crisp peanut chikki, and rich filter coffee.
             </p>
           </div>
 
